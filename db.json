@@ -1,0 +1,97 @@
+{
+  "produtos": [
+    {
+      "id": "1",
+      "nome": "Ração para Cães Adultos",
+      "preco": 89.9
+    },
+    {
+      "id": "2",
+      "nome": "Ração para Gatos Sêniores",
+      "preco": 74.5
+    },
+    {
+      "id": "3",
+      "nome": "Brinquedo para Cães de Borracha",
+      "preco": 35
+    },
+    {
+      "id": "4",
+      "nome": "Coleira para Gatos",
+      "preco": 19.9
+    },
+    {
+      "id": "5",
+      "nome": "Areia para Gatos Granulada",
+      "preco": 25.9
+    },
+    {
+      "id": "6",
+      "nome": "Shampoo para Cães",
+      "preco": 29.99
+    },
+    {
+      "id": "7",
+      "nome": "Caminha para Cães Pequenos",
+      "preco": 99.9
+    },
+    {
+      "id": "8",
+      "nome": "Cama para Gatos",
+      "preco": 59.9
+    },
+    {
+      "id": "9",
+      "nome": "Petiscos para Cães",
+      "preco": 15
+    },
+    {
+      "id": "10",
+      "nome": "Ração Premium para Cães Filhotes",
+      "preco": 105
+    },
+    {
+      "id": "11",
+      "nome": "Brinquedo Interativo para Gatos",
+      "preco": 45
+    },
+    {
+      "id": "12",
+      "nome": "Anti Pulgas para Cães",
+      "preco": 49.9
+    },
+    {
+      "id": "13",
+      "nome": "Saco de Descartáveis para Gatos",
+      "preco": 12.5
+    },
+    {
+      "id": "14",
+      "nome": "Escova para Cães de Pelo Longo",
+      "preco": 28.9
+    },
+    {
+      "id": "15",
+      "nome": "Acessório para Gatos (Arranhador)",
+      "preco": 75
+    }
+  ],
+  "clientes": [
+    {
+      "id": 1743559358455,
+      "clientName": "Ana",
+      "email": "teste@gmail.com",
+      "phone": "91241506",
+      "whatsapp": 1,
+      "obs": "123123"
+    },
+    {
+      "id": 1743559358455,
+      "clientName": "Bianca",
+      "email": "Bianca@gmail.com",
+      "phone": "91241506",
+      "whatsapp": 0,
+      "obs": "bianca é muito chata"
+    }
+  ]
+}

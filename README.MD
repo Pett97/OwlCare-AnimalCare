@@ -2,7 +2,13 @@ OwlCare
 
 Autor: Peterson Henrique de Padua 
 
-Este projeto tem como objetivo implementar progressivamente e de forma didática uma aplicação web inspirada em operações comuns de instituições e empressas (ex:cadastro de Animais,Agendamentos de Consultas)
+Este projeto tem como objetivo implementar progressivamente e de forma didática uma aplicação web 
+inspirada no site da https://popularpet.com.br/ acessado em 1/04/2027 18:59
+
+principais funções adotadas nesse projeto 
+cadastro de produtos
+listagem de produtos 
+e compras via carrinho
 
 
 O frontend da aplicação foi desenvolvido com HTML, CSS e JavaScript e o backend foi simulado pela implementação de uma API Fake, usando o JSON Server.

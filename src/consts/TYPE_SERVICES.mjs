@@ -1,0 +1,3 @@
+const TYPES_OF_SERVICES = ["BANHO", "TOSA", "CONSULTA", "VACINA"];
+
+export default TYPES_OF_SERVICES;
