@@ -1,6 +1,7 @@
-import { Client } from "../../../services/client.mjs";
+import { ServiceClient } from "../../../services/client-service.mjs";
 
 document.addEventListener('DOMContentLoaded', function () {
+    let service = new ServiceClient;
     var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems);
     let btnCadastrar = document.getElementById('store-client');
@@ -23,18 +24,15 @@ document.addEventListener('DOMContentLoaded', function () {
         let whatsapp = document.getElementById('phone-whatsapp')
         let obsClient = document.getElementById('obs_client');
 
-        let newClient = new Client(
-            id = idAleatorio(),    
-            nameClient.value,      
-            emailClient.value,     
-            phoneClient.value,    
-            whatsapp = whatsapp.value,   
-            obsClient.value        
-        );
-
-        console.log(newClient);
-
-        await newClient.storeClient();
+        let data = {
+            id : idAleatorio(),
+            clientName : nameClient.value,
+            email : emailClient.value,
+            phone : phoneClient.value,
+            whatsapp : whatsapp.value,
+            obs : obsClient.value
+        }
+        await service.storeClient(data);
     }
 });
 

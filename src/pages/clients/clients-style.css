@@ -1,3 +1,14 @@
 #list-client{
    margin: 15px;
 }
+
+#linha-cliente{
+   border-width: 5px;
+   border-color: red;
+}
+
+#tabela_cliente{
+   border-width: 5px;
+   border-color:blue;
+}
+
