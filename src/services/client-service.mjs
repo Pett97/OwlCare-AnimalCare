@@ -13,6 +13,7 @@ export class ServiceClient {
    }
 
    async getClient(idClient) {
+      console.log("123123123");
       if (!idClient) {
          return;
       }
@@ -53,12 +54,12 @@ export class ServiceClient {
                   "Content-Type": "application/json",
                },
                body: JSON.stringify({
-                  id: this.id,
-                  clientName: this.clientName,
-                  email: this.email,
-                  phone: this.phone,
-                  whatsapp: this.whatsapp,
-                  obs: this.obs,
+                  id: c.id,
+                  clientName: c.clientName,
+                  email: c.email,
+                  phone: c.phone,
+                  whatsapp: c.whatsapp,
+                  obs: c.obs,
                }),
             });
 
@@ -74,6 +75,71 @@ export class ServiceClient {
             console.error(error);
             return;
          }
+      }
+
+   }
+
+   async updateClient(data) {
+      let c = this._buildClient(data);
+      if (c == false) {
+         alert("erro ao atualizar cliente");
+      } else {
+         try {
+            const response = await fetch(`${URL_CLIENTS}/${c.id}`, {
+               method: "PUT",
+               headers: {
+                  "Content-Type": "application/json",
+               },
+               body: JSON.stringify({
+                  id: this.id,
+                  clientName: c.clientName,
+                  email: c.email,
+                  phone: c.phone,
+                  whatsapp: c.whatsapp,
+                  obs: c.obs,
+               }),
+            });
+
+            if (!response.ok) {
+               throw new Error("Erro ao Atualizar cliente");
+            }
+
+            const data = await response.json();
+            console.log(data);
+            alert("Cliente Atualizado Com Sucesso ");
+            return;
+         } catch (error) {
+            alert("Erro ao Atualizar cliente");
+            console.error(error);
+            return;
+         }
+      }
+   }
+
+   async deleteClient(idClient) {
+      try {
+         const response = await fetch(`${URL_CLIENTS}/${idClient}`, {
+            method: "DELETE",
+            headers: {
+               "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+               id: this.id
+            }),
+         });
+
+         if (!response.ok) {
+            throw new Error("Erro ao deletar Cliente");
+         }
+
+         const data = await response.json();
+         console.log(data);
+         alert("Cliente Deletado Com Sucesso ");
+         return;
+      } catch (error) {
+         alert("Erro ao Deletar cliente");
+         console.error(error);
+         return;
       }
 
    }

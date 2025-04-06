@@ -12,12 +12,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     let idAleatorio = () => {
-        return Date.now();
+        return Date.now()+"";
     };
 
     async function storeClient() {
-        let id = 0;
-
         let nameClient = document.getElementById('client_name');
         let emailClient = document.getElementById('email_client');
         let phoneClient = document.getElementById('phone_client');

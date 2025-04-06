@@ -3,6 +3,10 @@ import { ServiceClient } from "../../services/client-service.mjs"
 document.addEventListener('DOMContentLoaded', function () {
     const service = new ServiceClient;
 
+    function clearLocalStorage() {
+        localStorage.clear();
+    }
+
     async function listClients() {
         const clientes = await service.getAllClients();
         const cardContainer = document.getElementById('list-client');
@@ -36,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                <a class="waves-effect waves-light btn-small amber darken-3" data-id="${cliente.id}" onclick="editClient(event)">Editar</a> 
                             </div>
                             <div class="col s12 m6 l6">
-                               <button class="waves-effect waves-light btn-small red darken-1" data-id="${cliente.id}">Excluir</button>
+                               <button class="waves-effect waves-light btn-small red darken-1" data-id="${cliente.id}" onclick="deletClient(event)">Excluir</button>
                             </div>
                         </div>
                     </div>
@@ -47,27 +51,28 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         function haveWhatsApp(whatsapp) {
-            console.log(whatsapp);
-            if (whatsapp !== 1) {
+            if (whatsapp !== "1") {
                 return "Não";
             }
             return "Sim";
         }
 
         window.editClient = function (event) {
-            const idCliente = event.target.getAttribute('data-id');
+            let idCliente = event.target.getAttribute('data-id');
             console.log('Editar cliente com id:', idCliente);
-            // Aqui você pode chamar uma função para editar o cliente com o id, como:
-            // window.location.href = `/editar-cliente/${idCliente}`;
+            localStorage.setItem('idClientForEdit', idCliente);
+            window.location.href = './client/client.html';
         };
 
-        window.deleteClient = function (event) {
-            const idCliente = event.target.getAttribute('data-id');
-            console.log('Excluir cliente com id:', idCliente);
+        window.deletClient = async function (event) {
+            console.log('xxxx');
+            let idCliente = event.target.getAttribute('data-id');
+            await service.deleteClient(idCliente);
             // Aqui você pode chamar uma função para excluir o cliente com o id, como:
             // service.deleteClient(idCliente);
         };
     }
 
     listClients();
+    clearLocalStorage();
 });
