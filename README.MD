@@ -25,6 +25,9 @@ Site em Produção - GitHub Pages
 GitHub:
 https://github.com/Pett97/OwlCare-AnimalCare
 
+Link Proprotipação Figma
+https://www.figma.com/proto/V1aqTK2M20Yq42m7WBT3iX/OwlCare-AnimalCare?node-id=0-1&t=DtLnFmn7goC4NGl3-1
+
 Framework CSS
 MaterializeCSS
 
