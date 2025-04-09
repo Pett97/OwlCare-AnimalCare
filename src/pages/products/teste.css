@@ -1,0 +1,26 @@
+.desc-product{
+   font-weight: bold;
+}
+
+.real-value-product{
+   color: gray;
+   text-decoration: line-through;
+}
+
+.value-product{
+   color:#764EA0;
+   font-weight: bold;
+}
+
+.btn-cashback{
+   background-color: #A6CE39;
+}
+
+.btn-buy{
+   background-color: #764EA0;
+}
+
+.row-info-product{
+   margin: 0;
+   padding-left: 15px;
+}
