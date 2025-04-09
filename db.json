@@ -2,78 +2,138 @@
   "produtos": [
     {
       "id": "1",
-      "nome": "Ração para Cães Adultos",
-      "preco": 89.9
+      "nomeProduto": "Ração Premium para Gatos Adultos",
+      "descricao": "Ração rica em proteínas para gatos adultos de porte médio e grande.",
+      "valorOriginal": 89.9,
+      "valorDesconto": 79.9,
+      "valorCashback": 5.59,
+      "caminho_foto": ""
     },
     {
       "id": "2",
-      "nome": "Ração para Gatos Sêniores",
-      "preco": 74.5
+      "nomeProduto": "Ração Especial para Gatos Sêniores",
+      "descricao": "Fórmula balanceada para gatos com mais de 7 anos.",
+      "valorOriginal": 74.5,
+      "valorDesconto": 66.0,
+      "valorCashback": 4.29,
+      "caminho_foto": ""
     },
     {
       "id": "3",
-      "nome": "Brinquedo para Cães de Borracha",
-      "preco": 35
+      "nomeProduto": "Areia Higiênica para Gatos 4kg",
+      "descricao": "Areia com alta absorção e controle de odores.",
+      "valorOriginal": 34.9,
+      "valorDesconto": 29.9,
+      "valorCashback": 1.79,
+      "caminho_foto": ""
     },
     {
       "id": "4",
-      "nome": "Coleira para Gatos",
-      "preco": 19.9
+      "nomeProduto": "Shampoo Antipulgas para Cães 500ml",
+      "descricao": "Shampoo com ação antipulgas e fragrância suave.",
+      "valorOriginal": 39.9,
+      "valorDesconto": 34.9,
+      "valorCashback": 1.74,
+      "caminho_foto": ""
     },
     {
       "id": "5",
-      "nome": "Areia para Gatos Granulada",
-      "preco": 25.9
+      "nomeProduto": "Brinquedo Mordedor de Borracha",
+      "descricao": "Mordedor resistente ideal para cães ativos.",
+      "valorOriginal": 24.9,
+      "valorDesconto": 21.9,
+      "valorCashback": 1.1,
+      "caminho_foto": ""
     },
     {
       "id": "6",
-      "nome": "Shampoo para Cães",
-      "preco": 29.99
+      "nomeProduto": "Coleira Antipulgas e Carrapatos",
+      "descricao": "Proteção contínua por até 8 meses.",
+      "valorOriginal": 129.9,
+      "valorDesconto": 119.9,
+      "valorCashback": 7.19,
+      "caminho_foto": ""
     },
     {
       "id": "7",
-      "nome": "Caminha para Cães Pequenos",
-      "preco": 99.9
+      "nomeProduto": "Tapete Higiênico com Gel Ativado (30un)",
+      "descricao": "Alta absorção e neutralização de odores.",
+      "valorOriginal": 89.0,
+      "valorDesconto": 79.0,
+      "valorCashback": 3.95,
+      "caminho_foto": ""
     },
     {
       "id": "8",
-      "nome": "Cama para Gatos",
-      "preco": 59.9
+      "nomeProduto": "Petiscos Naturais para Cães 300g",
+      "descricao": "Snacks saborosos e saudáveis para seu pet.",
+      "valorOriginal": 29.9,
+      "valorDesconto": 24.9,
+      "valorCashback": 1.24,
+      "caminho_foto": ""
     },
     {
       "id": "9",
-      "nome": "Petiscos para Cães",
-      "preco": 15
+      "nomeProduto": "Fonte de Água para Gatos",
+      "descricao": "Mantém a água sempre fresca e filtrada.",
+      "valorOriginal": 149.9,
+      "valorDesconto": 129.9,
+      "valorCashback": 7.14,
+      "caminho_foto": ""
     },
     {
       "id": "10",
-      "nome": "Ração Premium para Cães Filhotes",
-      "preco": 105
+      "nomeProduto": "Caminha Acolchoada para Cães e Gatos",
+      "descricao": "Conforto garantido com tecido antialérgico.",
+      "valorOriginal": 99.9,
+      "valorDesconto": 89.9,
+      "valorCashback": 6.29,
+      "caminho_foto": ""
     },
     {
       "id": "11",
-      "nome": "Brinquedo Interativo para Gatos",
-      "preco": 45
+      "nomeProduto": "Cortador de Unhas para Pets",
+      "descricao": "Ferramenta segura e fácil de usar.",
+      "valorOriginal": 19.9,
+      "valorDesconto": 16.9,
+      "valorCashback": 0.68,
+      "caminho_foto": ""
     },
     {
       "id": "12",
-      "nome": "Anti Pulgas para Cães",
-      "preco": 49.9
+      "nomeProduto": "Escova Dupla para Pelos de Cães",
+      "descricao": "Lado com cerdas macias e pinos metálicos.",
+      "valorOriginal": 34.9,
+      "valorDesconto": 29.9,
+      "valorCashback": 1.79,
+      "caminho_foto": ""
     },
     {
       "id": "13",
-      "nome": "Saco de Descartáveis para Gatos",
-      "preco": 12.5
+      "nomeProduto": "Arranhador de Papelão para Gatos",
+      "descricao": "Ideal para afiar as garras e aliviar o estresse.",
+      "valorOriginal": 59.9,
+      "valorDesconto": 49.9,
+      "valorCashback": 2.99,
+      "caminho_foto": ""
     },
     {
       "id": "14",
-      "nome": "Escova para Cães de Pelo Longo",
-      "preco": 28.9
+      "nomeProduto": "Comedouro Inox Antiderrapante",
+      "descricao": "Resistente, fácil de limpar e não escorrega.",
+      "valorOriginal": 39.9,
+      "valorDesconto": 32.9,
+      "valorCashback": 1.81,
+      "caminho_foto": ""
     },
     {
       "id": "15",
-      "nome": "Acessório para Gatos (Arranhador)",
-      "preco": 75
+      "nomeProduto": "Bolsa de Transporte Ventilada para Pets",
+      "descricao": "Transporte seu pet com conforto e segurança.",
+      "valorOriginal": 199.9,
+      "valorDesconto": 179.9,
+      "valorCashback": 12.59,
+      "caminho_foto": ""
     }
   ],
   "clientes": [

@@ -1,26 +1,30 @@
-.desc-product{
+.desc-product {
    font-weight: bold;
 }
 
-.real-value-product{
+.real-value-product {
    color: gray;
    text-decoration: line-through;
 }
 
-.value-product{
-   color:#764EA0;
+.value-product {
+   color: #764EA0;
    font-weight: bold;
 }
 
-.btn-cashback{
+.btn-cashback {
    background-color: #A6CE39;
 }
 
-.btn-buy{
+.btn-buy {
+   margin: 12px;
    background-color: #764EA0;
 }
 
-.row-info-product{
-   margin: 0;
-   padding-left: 15px;
+.row-info-product {
+   margin: 12px;
+}
+
+#imagemproduto {
+   margin: 4px;
 }
