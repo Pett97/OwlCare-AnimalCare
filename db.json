@@ -176,6 +176,31 @@
           "caminho_foto": ""
         }
       ]
+    },
+    {
+      "id": "1",
+      "valorOriginal": 89.9,
+      "valorDesconto": 79.9,
+      "valorCashback": 5.59,
+      "client": {
+        "clientName": "Kety",
+        "email": "anateste@gmail.com",
+        "phone": "912545091",
+        "whatsapp": "1",
+        "obs": "123123",
+        "id": "1743559358455"
+      },
+      "products": [
+        {
+          "id": "1",
+          "nomeProduto": "Ração Premium para Gatos Adultos",
+          "descricao": "Ração rica em proteínas para gatos adultos de porte médio e grande.",
+          "valorOriginal": 89.9,
+          "valorDesconto": 79.9,
+          "valorCashback": 5.59,
+          "caminho_foto": ""
+        }
+      ]
     }
   ]
 }
