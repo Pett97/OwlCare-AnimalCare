@@ -1,4 +1,4 @@
-class Service {
+export class Service {
   constructor(client, typeService) {
     this.client = client;
     this.typeService = typeService;
