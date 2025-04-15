@@ -17,7 +17,7 @@
       "id": "1743903256616"
     },
     {
-      "clientName": "ana luiza",
+      "clientName": "ana luiz2",
       "email": "anaspke@gmail.com",
       "phone": "91241506",
       "whatsapp": "1",
@@ -50,6 +50,19 @@
         "obs": "asdasdasd"
       },
       "status": "PAGO",
+      "service": "TOSA"
+    },
+    {
+      "id": "1744755196891",
+      "client": {
+        "id": "1744690987948",
+        "clientName": "ana luiz2",
+        "email": "anaspke@gmail.com",
+        "phone": "91241506",
+        "whatsapp": "1",
+        "obs": "asdasdasd"
+      },
+      "status": "PENDENTE",
       "service": "TOSA"
     }
   ]

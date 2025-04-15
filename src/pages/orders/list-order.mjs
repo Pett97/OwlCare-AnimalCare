@@ -14,12 +14,12 @@ document.addEventListener("DOMContentLoaded", function () {
     let rowList = document.getElementById("row-list-carts");
 
     rowList.innerHTML = "";
+    let s = '';
 
     orders.forEach((order) => {
-      const showPedido = document.createElement("div");
-      showPedido.classList.add("col", "s12", "m6", "l3");
-
-      showPedido.innerHTML = `
+      
+      s+= `
+      <div class="col s12 m6 l3">
                     <div class="card deep-purple lighten-1">
                <div class="card-content white-text">
                   <span class="card-title">${order.id} - ${order.client.clientName}</span>
@@ -33,9 +33,11 @@ document.addEventListener("DOMContentLoaded", function () {
                   <a data-id="${order.id}" onclick="deletarOrderm(event)">Deletar</a>
                </div>
             </div>
+            </div>
         `;
-      rowList.appendChild(showPedido);
+      
     });
+    rowList.innerHTML = s;
   }
 
   clearLocalStorage();
