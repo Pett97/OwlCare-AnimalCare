@@ -8,9 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const inputPhoneClient = document.getElementById("phone_client");
   const selectTipoServico = document.getElementById("tipo_servico");
   const selectStatusPagamento = document.getElementById("status_pagamento");
+  const btnUpdateOrder = document.getElementById("update-order");
 
   let service = new ServiceOrder();
-  let idOrder = "1";
+  let idOrder = localStorage.getItem('idOrderAction');
 
   TYPE_OF_SERVICE.forEach((tipo) => {
     const option = document.createElement("option");
@@ -50,5 +51,20 @@ document.addEventListener("DOMContentLoaded", function () {
     if (inputPhoneClient.value) inputPhoneClient.focus();
   }
 
+  async function updateOrder() {
+    let dataOrderForUpdate = {
+      id: idOrder,
+      client: {
+        clientName: inputNameClient.value,
+        email: inputEmailClient.value,
+        phone: inputPhoneClient.value,
+      },
+      status: selectStatusPagamento.value,
+      service: selectTipoServico.value,
+    };
+    await service.updateOrder(dataOrderForUpdate);
+  }
+
   getOrder(idOrder);
+  btnUpdateOrder.addEventListener("click", updateOrder);
 });

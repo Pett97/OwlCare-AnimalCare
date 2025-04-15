@@ -19,14 +19,14 @@
   ],
   "ordemServico": [
     {
-      "id":"1",
+      "id": "1",
       "client": {
         "clientName": "Jurubeba",
         "email": "anateste@gmail.com",
         "phone": "912545091"
       },
       "status": "PAGO",
-      "service": "TOSA"
+      "service": "VACINA"
     }
   ]
 }

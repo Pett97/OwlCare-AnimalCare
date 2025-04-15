@@ -1,6 +1,6 @@
 import { ServiceOrder } from "../../services/order-service.mjs";
 
-document.addEventListener("DOMContentLoaded",function () {
+document.addEventListener("DOMContentLoaded", function () {
   let service = new ServiceOrder();
   let idPedidoAction;
 
@@ -9,9 +9,7 @@ document.addEventListener("DOMContentLoaded",function () {
   }
 
   async function listOrders() {
-
     let orders = await service.getAll();
-    console.log(orders);
 
     let rowList = document.getElementById("row-list-carts");
 
@@ -32,7 +30,7 @@ document.addEventListener("DOMContentLoaded",function () {
                </div>
                <div class="card-action">
                   <a data-id="${order.id}" onclick="editarPedido(event)">Editar</a>
-                  <a data-id="${order.id}>Deletar</a>
+                  <a data-id="${order.id}" onclick="deletarOrderm(event)">Deletar</a>
                </div>
             </div>
         `;
@@ -52,5 +50,10 @@ document.addEventListener("DOMContentLoaded",function () {
     } else {
       alert("Nao Foi Possivel Abrir Pedido");
     }
+  };
+
+  window.deletarOrderm = async function (event) {
+    let idOrderAction = event.target.getAttribute("data-id");
+    await service.deleteOrder(idOrderAction);
   };
 });

@@ -65,11 +65,8 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         window.deletClient = async function (event) {
-            console.log('xxxx');
             let idCliente = event.target.getAttribute('data-id');
             await service.deleteClient(idCliente);
-            // Aqui você pode chamar uma função para excluir o cliente com o id, como:
-            // service.deleteClient(idCliente);
         };
     }
 
