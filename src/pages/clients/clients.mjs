@@ -59,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         window.editClient = function (event) {
             let idCliente = event.target.getAttribute('data-id');
-            console.log('Editar cliente com id:', idCliente);
             localStorage.setItem('idClientForEdit', idCliente);
             window.location.href = './client/client.html';
         };

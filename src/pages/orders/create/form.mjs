@@ -10,13 +10,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const selectClient = document.getElementById("select-client");
   const selectService = document.getElementById("select-service");
   const selectInitialStatus = document.getElementById("select-initialStatus");
+  const btnCreateOrder = document.getElementById("createOrder");
 
   //popular selects
   const init = async () => {
     const dados = await clientService.getAllClients();
     dados.forEach((client) => {
       const option = document.createElement("option");
-      option.value = client;
+      option.value = client.id;
       option.text = client.clientName;
       selectClient.appendChild(option);
     });
@@ -39,5 +40,28 @@ document.addEventListener("DOMContentLoaded", function () {
     M.FormSelect.init(selectInitialStatus);
   };
 
+  let idOrder = Date.now() + "";
+
+  async function getClienteById(id) {
+      return await clientService.getClient(id);
+  }
+
+  async function createOrder() {
+    let client = await getClienteById(selectClient.value);
+
+    let data = {
+      id:idOrder,
+      client: client,
+      status: selectInitialStatus.value,
+      service: selectService.value,
+    };
+     await orderService.newOrder(data);
+     window.location.href("../list-order.html");
+  }
+
+  btnCreateOrder.addEventListener("click", function (event) {
+    event.preventDefault();
+    createOrder();
+  });
   init();
 });

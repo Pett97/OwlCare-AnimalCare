@@ -1,9 +1,25 @@
 const URL_ORDER_SERVICO = "http://localhost:3000/ordemServico";
 
-import { Client } from "./client.mjs";
-import { Service } from "./service.mjs";
-
 export class ServiceOrder {
+  async newOrder(data) {
+    try {
+      const response = await fetch(URL_ORDER_SERVICO, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        alert("erro ao salvar ordem");
+      }
+      alert("Serviço Criado Com Sucesso");
+    } catch (error) {
+      console.error;
+    }
+  }
+
   async getOrder(idOrder) {
     if (!idOrder) {
       return;

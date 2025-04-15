@@ -15,18 +15,42 @@
       "whatsapp": "0",
       "obs": "12312321",
       "id": "1743903256616"
+    },
+    {
+      "clientName": "ana luiza",
+      "email": "anaspke@gmail.com",
+      "phone": "91241506",
+      "whatsapp": "1",
+      "obs": "asdasdasd",
+      "id": "1744690987948"
     }
   ],
   "ordemServico": [
     {
-      "id": "1",
+      "id": "1744690503049",
       "client": {
-        "clientName": "Jurubeba",
-        "email": "anateste@gmail.com",
-        "phone": "912545091"
+        "id": "1743903256616",
+        "clientName": "barbara",
+        "email": "teste@gmail.com",
+        "phone": "91241506",
+        "whatsapp": "0",
+        "obs": "12312321"
+      },
+      "status": "CANCELADO",
+      "service": "CONSULTA"
+    },
+    {
+      "id": "1744691023730",
+      "client": {
+        "id": "1744690987948",
+        "clientName": "ana luiza",
+        "email": "anaspke@gmail.com",
+        "phone": "91241506",
+        "whatsapp": "1",
+        "obs": "asdasdasd"
       },
       "status": "PAGO",
-      "service": "VACINA"
+      "service": "TOSA"
     }
   ]
 }

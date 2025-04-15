@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   <span class="card-title">${order.id} - ${order.client.clientName}</span>
                   <p>${order.client.email}</p>
                   <p>${order.client.phone}</p>
-                  <p>${order.status}</p>
+                  <p>Status; ${order.status}</p>
                   <p>Serviço: ${order.service}</p>
                </div>
                <div class="card-action">

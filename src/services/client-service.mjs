@@ -13,7 +13,6 @@ export class ServiceClient {
    }
 
    async getClient(idClient) {
-      console.log("123123123");
       if (!idClient) {
          return;
       }

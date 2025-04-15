@@ -32,26 +32,27 @@
       <div class="row">
          <form>
             <div class="input-field col s12 l6">
-               <select id="select-client">
+               <select id="select-client" required>
                   <option value="" disabled selected>Selecione O Cliente</option>
                   <!--preenchido por JS-->
                </select>
                <label>Cliente</label>
             </div>
             <div class="input-field col s12 l6">
-               <select id="select-service">
+               <select id="select-service" required>
                   <option value="" disabled selected>Selecione O Serviço</option>
                   <!--preenchido por JS-->
                </select>
                <label>Serviço</label>
             </div>
             <div class="input-field col s12 l6">
-               <select id="select-initialStatus">
+               <select id="select-initialStatus" required>
                   <option value="" disabled selected>Selecione Status Inicial</option>
                   <!--preenchido por JS-->
                </select>
                <label>Status Inicial</label>
             </div>
+            <a href="#" class="waves-effect waves-light btn" id="createOrder">Criar</a>
          </form>
       </div>
    </div>
