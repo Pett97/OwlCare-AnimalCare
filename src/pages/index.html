@@ -7,6 +7,15 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.2.2/dist/css/materialize.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,400,0,0&icon_names=delivery_truck_speed" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <!-- Material Symbols - Outlined Set -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <!-- Material Symbols - Rounded Set -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+    <!-- Material Symbols - Sharp Set -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp" rel="stylesheet" />
     <link rel="stylesheet" href="./index-style.css">
     <title>OwlFlow</title>
 </head>
@@ -14,11 +23,17 @@
 <body>
     <header>
         <section>
-            <nav class="nav navbar grey lighten-3">
+            <nav class="nav navbar grey lighten-5">
                 <div class="nav-wrapper">
-                    <a href="./index.html" class="brand-logo center "><span class="black-text text-darken-2">OwlCare</span></a>
+                    <a href="./index.html" class="brand-logo center "><span
+                            class="black-text text-darken-2">OwlCare</span></a>
                     <ul class="right">
-                        <li><a href="./clients/clients.html">Login</a></li>
+                        <li><a href="./clients/clients.html"><span class="black-text text-darken-2">Central De
+                                    Atendimento</span></a></li>
+                        <li><a href="./login/login.html"><span class="black-text text-darken-2">Entre ou
+                                    Cadastre-se</span></a></li>
+                        <li><a href="./orders/list-order.html"><span
+                                    class="black-text text-darken-2">Carrinho</span></a></li>
                     </ul>
                 </div>
             </nav>
@@ -26,10 +41,16 @@
         <section>
             <nav class="nav navbar deep-purple lighten-1">
                 <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo center">OwlCare</a>
                     <ul class="left">
-                        <li><a href="./clients/clients.html">Clientes</a></li>
-                        <li><a href="./orders/list-order.html">Serviços</a></li>
+                        <li><a href="./clients/clients.html">Cachorro</a></li>
+                        <li><a href="./orders/list-order.html">Gato</a></li>
+                        <li><a href="./orders/list-order.html">Aves e Passaros</a></li>
+                        <li><a href="./orders/list-order.html">Coelho</a></li>
+                        <li><a href="./orders/list-order.html">Diversos</a></li>
+                        <li><a href="./orders/list-order.html">Peixes</a></li>
+                        <li><a href="./orders/list-order.html">Repteis</a></li>
+                        <li><a href="./orders/list-order.html">Tem Tudo Aqui</a></li>
+                        <li><a href="./orders/list-order.html">Saldão Pop</a></li>
                     </ul>
                 </div>
             </nav>
@@ -37,9 +58,74 @@
     </header>
     <div>
         <section>
-            <p class="center">Seu Sistema AnimalCare</p>
+            <div class="carousel carousel-slider">
+                <a class="carousel-item" href="#one!"><img class="responsive-img"
+                        src="../assets/img/carousel/1.webp"></a>
+                <a class="carousel-item" href="#two!"><img class="responsive-img"
+                        src="../assets/img/carousel/2.webp"></a>
+            </div>
         </section>
     </div>
+    <section>
+        <!-- cards de entrega cashback e etc-->>
+        <div class="row">
+            <div class="col s6 m3 l2">
+                <div class="card grey lighten-3">
+                    <div class="card-content">
+                        <i class="material-icons">moped</i>
+                        <span class=" black-text text-darken-2">Entrega Express</span>
+                        <p>Entrega Rápida e segura</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6 m3 l2">
+                <div class="card grey lighten-3">
+                    <div class="card-content">
+
+                        <i class="material-icons">view_in_ar</i>
+                        <span class="black-text text-darken-2">Frete Grátis</span>
+                        <p>Express e Correios </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col s6 m3 l2">
+                <div class="card grey lighten-3">
+                    <div class="card-content">
+                        <i class="material-icons">credit_card</i>
+                        <span class=" black-text text-darken-2">Parcele em 6x</span>
+                        <p>Parcelas minima de r$ 60 </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6 m3 l2">
+                <div class="card grey lighten-3">
+                    <div class="card-content">
+                        <i class="material-icons">currency_exchange</i>
+                        <span class="black-text text-darken-2">CashBack</span>
+                        <p>Utilize na sua Proxima Compra</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6 m3 l2">
+                <div class="card grey lighten-3">
+                    <div class="card-content">
+                        <i class="material-icons">store</i>
+                        <span class=" black-text text-darken-2">Compre e Retire</span>
+                        <p>5% de desconto </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col s6 m3 l2">
+                <div class="card grey lighten-3">
+                    <div class="card-content">
+                        <i class="material-icons">qr_code</i>
+                        <span class=" black-text text-darken-2">5% off no pix</span>
+                        <p>Exeto Premier e Golden</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     </main>
     </div>
@@ -47,6 +133,7 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.2.2/dist/js/materialize.min.js"></script>
+    <script src="./index.js"></script>
 </body>
 
 </html>
