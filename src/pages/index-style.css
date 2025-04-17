@@ -2,3 +2,45 @@ body {
    background-color: white
 }
 
+.center-all{
+   margin-left: 150px;
+   margin-right: 150px;
+}
+
+.card {
+   background-color: white;
+   transition: transform 0.3s ease;
+}
+
+.card:hover {
+   transform: scale(1.05);
+   /* Aumenta 5% */
+}
+
+.card-content p {
+   color: black;
+}
+
+.title-footer{
+   font-weight: bold;
+}
+
+
+#tipos-de-produtos {
+  margin: 25px
+}
+
+#myfooter{
+   color: white;
+}
+
+footer{
+   margin-top: 75px;
+}
+
+.footer-itens{
+   display: flex;
+   flex-direction: column;
+}
+
+
