@@ -1,123 +1,106 @@
-OwlCare
+# OwlCare
+## Autor: Peterson Henrique de Padua
 
-Autor: Peterson Henrique de Padua 
+Este projeto tem como objetivo implementar, de forma didática, uma aplicação web inspirada no site PopularPet, acessado em 1/04/2027 às 18:59.
 
-Este projeto tem como objetivo implementar progressivamente e de forma didática uma aplicação web 
-inspirada no site da https://popularpet.com.br/ acessado em 1/04/2027 18:59
+Principais Funcionalidades
+Cadastro de Serviços: Cadastrar serviços de petshop, como banho, tosa, vacinas, com status da solicitação.
 
-principais funções adotadas nesse projeto 
-cadastro de serviços de um petshop tais como banho,tosa,vacina junto com o status da solitação 
+Cadastro de Clientes (CRUD): Cadastro completo de clientes, permitindo criar, editar, visualizar e excluir informações.
 
-cadastro de clientes CRUD 
+Tecnologias Utilizadas
+Frontend: Desenvolvido com HTML, CSS e JavaScript.
 
+Backend: Simulado com uma API Fake utilizando JSON Server e localStorage.
 
+Design das Telas
+Figma: Acessar Design
 
-O frontend da aplicação foi desenvolvido com HTML, CSS e JavaScript e o backend foi simulado pela implementação de uma API Fake, usando o JSON Server e localstorage.
+Ajustes Mobile: Em andamento.
 
-Design das Telas - Figma:
-### ajustar mobile
+Design System
+Link para o PDF: [Inserir Link Aqui]
 
-Design System:
-### FAZER  Link para o PDF
+Links Importantes
+Site em Produção (GitHub Pages): Acessar Site
 
-Site em Produção - GitHub Pages
-### ATUALIZAR
+GitHub: https://github.com/Pett97/OwlCare-AnimalCare
 
-GitHub:
-https://github.com/Pett97/OwlCare-AnimalCare
+### Funcionalidades Implementadas
+#### RA1 - Utilização de Frameworks CSS
+* [X] ID01: Implementação de layout responsivo utilizando o Materialize CSS, garantindo que a página se adapte adequadamente a diferentes dispositivos (mobile e desktop).
 
-Link Proprotipação Figma
-https://www.figma.com/proto/V1aqTK2M20Yq42m7WBT3iX/OwlCare-AnimalCare?node-id=0-1&t=DtLnFmn7goC4NGl3-1
+* [X] ID02: Uso de Flexbox e Grid Layout para garantir que o layout seja fluido e responsivo em diferentes resoluções.
 
-Framework CSS
-MaterializeCSS web
+* [X] ID03: Utilização de componentes prontos, como cards, botões e modais, que oferecem uma interface interativa e agradável.
 
-Dependências JavaScript
-[x]   JQuery - Para realizar animações.
-[x] JSON Server - Para simular uma API Rest.
-Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
+* [X] ID04: Layout fluido e responsivo utilizando unidades relativas como vw, vh, %, em e rem, em vez de unidades fixas (px).
 
-RA1 - Utilizar Frameworks CSS para estilização de elementos HTML e criação de layouts responsivos.
+* [X] ID05: Implementação de animações para transições e feedback visual ao usuário, usando CSS Animations e jQuery.
 
-[]ID0 - Prototipa interfaces adaptáveis para no mínimo os tamanhos de tela mobile e desktop, usando ferramentas de design como Figma, Quant UX ou Sketch.
+* [X] ID06: Aplicação de transições personalizadas entre diferentes estados da página, como mudança de cor e exibição de elementos.
 
-[X]ID01 - Implementa um layout responsivo de uma página web utilizando um Framework CSS, como Bootstrap, Materialize ou Tailwind (com DaisyUI), aproveitando as técnicas de Flexbox ou Grid oferecidas pelo próprio framework, garantindo que o layout se adapte adequadamente a diferentes tamanhos de tela e dispositivos.
+* [X] ID07: Aplicação de um Design System consistente com diretrizes de estilo, cores e tipografia, garantindo uma experiência de usuário uniforme.
 
-[X]ID 02 - Utiliza técnica de responsividade nativa de CSS, como Flexbox ou Grid Layout, para criar layouts responsivos e fluidos em diferentes resoluções de tela.
+* [ ] ID08: Uso do Sass para modularizar e organizar o código CSS (Em andamento).
 
-[X]ID 03 - Utiliza componentes CSS (ex. card, button ou outros) e JavaScript (ex. modal, carrousel ou outro) oferecidos por um Framework CSS.
+* [X] ID09: Implementação de tipografia responsiva, ajustando o tamanho da fonte de acordo com diferentes tamanhos de tela utilizando media queries.
 
-[X]ID 04 - Implementa um layout fluido e responsivo utilizando unidades relativas (vw, vh, %, em ou rem) em vez de unidades fixas (px) em diferentes dispositivos e tamanhos de tela.
+#### RA2 - Tratamento de Formulários e Validações Customizadas
+* [X] ID10: Validação de formulários com exibição de mensagens de erro ou sucesso usando a API de HTML, para garantir dados válidos.
 
-[X]ID 05 - Implementa animações em elementos da página, como fadeIn/fadeOut, slideIn/slideOut, utilizando CSS Animations ou bibliotecas de animação, como o Animate.css ou JQuery, para fornecer feedback visual ao usuário e criar uma experiência interativa.
+* [X] ID11: Implementação de validação customizada com expressões regulares (REGEX) para garantir o formato adequado de e-mail, telefone, etc.
 
-[X] ID 06 - Cria transições personalizadas entre diferentes estados da página ou elementos, como mudanças de layout, alterações de cor ou exibição/hide de elementos, usando CSS Transitions ou CSS Animation, para melhorar a usabilidade e a aparência da aplicação.
+* [X] ID12: Implementação de elementos de formulário como checkbox, radio buttons e select para facilitar a interação com o usuário.
 
-[X]ID 07 - Aplica um Design System consistente, definindo diretrizes de estilo, cores, tipografia e padrões de componentes que são seguidos em toda a aplicação, garantindo uma experiência de usuário uniforme e atraente.
+* [X] ID13: Uso de Web Storage para persistir dados entre sessões de usuário.
 
-[]ID 08 - Implementa pré-processadores CSS, como o Sass, em conjunto com um Framework CSS ou de forma isolada, para organizar e modularizar o código CSS, aplicando variáveis, mixins e funções para facilitar a manutenção e escalabilidade dos estilos.
+#### RA3 - Ferramentas de Desenvolvimento e Qualidade de Código
+* [X] ID14: Configuração de ambiente de desenvolvimento com Node.js e NPM.
 
-[X]ID 09 - Aplica tipografia responsiva utilizando media queries ou a função clamp(), em conjunto com unidades relativas como rem, em ou vw, para ajustar o tamanho da fonte de acordo com diferentes tamanhos de tela.
+* [X] ID15: Uso de linters como ESLint para garantir a qualidade e consistência do código.
 
-RA2 - Realizar tratamento de formulários e aplicar validações customizadas no lado cliente, utilizando a API do HTML e expressões regulares (REGEX).
+* [X] ID16: Versionamento de código com Git e GitHub, seguindo boas práticas de gerenciamento de branches.
 
-[X]ID 10 - Implementa tratamento de formulários no lado cliente com apresentação de mensagens de erro (texto próximo dos campos de entrada ou balões com mensagens) ou sucesso, utilizando os recursos da API do HTML, como validação de campos obrigatórios, tipo de entrada e limites de caracteres, garantindo que os dados inseridos sejam válidos antes de serem enviados para o servidor (via tratador de evento submit).
+* [X] ID17: Otimização do código e recursos com minificação de CSS/JS e otimização de imagens.
 
-[X]ID 11 - Aplica expressões regulares (REGEX) de forma eficiente para realizar validações customizadas nos campos de formulários, como formatos específicos de e-mail, telefone, data ou outros padrões personalizados definidos pelos requisitos do projeto.
+* [X] ID18: Documentação do projeto no arquivo README.md.
 
-[X]ID 12 - Incorpora elementos de listagem, como checkbox, radio ou select, de maneira eficiente em formulários web, possibilitando a seleção e coleta precisa de dados pelos usuários.
+* [X] ID19: Organização dos arquivos do projeto de forma coerente e modular.
 
-[X]ID 13 - Realiza a escrita e leitura de dados no Web Storage, permitindo a persistência de informações entre sessões de usuário e fornecendo uma maneira eficaz de armazenar dados localmente no navegador.
+#### RA4 - Bibliotecas de Funções e Componentes JavaScript
+* [X] ID21: Uso da biblioteca jQuery para manipulação do DOM e aprimoramento da interatividade da aplicação.
 
-RA3 - Aplicar ferramentas para otimização do processo de desenvolvimento web, incluindo Node.js, NPM e linters para garantir a qualidade do código, juntamento com boas práticas de versionamento e organização de projetos.
+* [ ] ID22: Integração com um plugin jQuery (como o jQuery Mask Plugin) para melhorar a funcionalidade da interface (Em andamento).
 
-[X]ID 14 - Configura adequadamente um ambiente de desenvolvimento usando Node.js e NPM para gerenciar pacotes e dependências do projeto, facilitando a instalação e o uso de bibliotecas e ferramentas de terceiros.
+* [ ] ID23: Uso de bibliotecas de web components como Lit, para criar componentes reutilizáveis e melhorar a modularidade (Em andamento).
 
-[X]ID 15 - Utiliza linters, como ESLint ou Stylelint, para analisar e corrigir automaticamente problemas de código, incluindo erros de sintaxe, estilo e boas práticas, garantindo a qualidade e consistência do código do projeto.
+* [X] ID24: Uso de Material Web Components para integrar componentes prontos e fornecer funcionalidades específicas.
 
-[X]ID 16 - Adota boas práticas de versionamento utilizando sistemas como Git e GitHub, criando e gerenciando repositórios com branches adequados ou pelo menos o branch main.
+#### RA5 - Requisições Assíncronas
+* [X] ID25: Realização de requisições assíncronas para uma API Fake com Fetch API para persistir dados.
 
-[X] ID 17 - Utiliza técnicas de minificação e otimização de recursos, como minificação de CSS e JavaScript e otimização de imagens, para melhorar o desempenho e o tempo de carregamento do site ou aplicação.
+* [X] ID26: Exibição de dados obtidos da API Fake na página web.
 
-[X]ID 18 - Organiza o arquivo README.md conforme o template exigido na disciplina, contendo informações claras e estruturadas sobre o projeto, principalmente o checklist de tópicos devidamente preenchido.
+### Manual de Execução
 
-[X]ID 19 - Organiza os arquivos do projeto em uma estrutura coerente, lógica e modular, conforme projeto de exemplo, facilitando a localização, manutenção e escalabilidade.
+* Clonar o repositório:
 
-[] ID 20 - Utiliza as metodologias BEM (Block Element Modifier) ou SMACSS (Scalable and Modular Architecture for CSS) para organizar e estruturar os estilos CSS de forma eficiente, garantindo a reutilização de estilos, a legibilidade do código e a manutenção sustentável do projeto.
+```
+git clone https://github.com/Pett97/OwlCare-AnimalCare.git
+```
 
-RA4 - Aplicar bibliotecas de funções e componentes em JavaScript para aprimorar a interatividade de páginas web.
+dentro da pasta do projeto 
+```
+npm install
+```
 
-[X]ID 21 - Utiliza a biblioteca jQuery para manipular o DOM e aprimorar a interatividade das páginas web, implementando funcionalidades como eventos, animações e manipulação de elementos HTML de forma eficiente.
+(Opcional) Instalar o JSON Server globalmente:
+```
+npm install -g json-server
+```
 
-[]ID 22 - Seleciona e integra com sucesso um plugin jQuery, como o jQuery Mask Plugin ou outro plugin relevante para o projeto, a fim de melhorar a funcionalidade ou a aparência de elementos específicos em uma página web.
-
-[ ] ID 23 - Utiliza bibliotecas de web components, como Lit, para criar componentes reutilizáveis e encapsulados, melhorando a modularidade e a manutenibilidade das páginas web.
-
-[X] ID 24 - Utiliza uma biblioteca de componentes prontos, como Material Web Components ou outra de escolha, ou então, algum componente independente (standalone) a fim de oferecer funcionalidades específicas sem a necessidade de estar integrado a uma biblioteca completa.
-
-RA5 - Efetuar requisições assíncronas para uma API fake e APIs públicas, permitindo a obtenção e manipulação de dados dinamicamente.
-
-[X]ID 25 - Realiza requisições assíncronas para uma API fake utilizando adequadamente conceitos como AJAX, Fetch API ou bibliotecas, para persistir os dados originados de um formulário.
- 
-[X]ID 26 - Realiza requisições assíncronas para uma API fake utilizando adequadamente conceitos como AJAX, Fetch API ou bibliotecas, para exibição dos dados na página web.
-
-
-Manual de execução
-
-##atualizr
-
-Clonar o repositório com git clone
-Fazer checkout no branch develop que contém as modificações mais recentes
-Abrir o projeto no editor Visual Studio Code (VS Code)
-Abrir um terminal pelo VSCode ou qualquer terminal do seu Sistema Operacional apontando para o diretório raiz do projeto
-Instalar as dependências contidas no package.json
-Comando: npm i
-(Opcional) Instalar o JSON Server globalmente disponível em https://www.npmjs.com/package/json-server
-Comando: npm i -g json-server
-É opcional porque a dependência já vem cadastrada no arquivo package.json para instalação local na pasta node_modules
-Executar a API Fake (JSON Server) via um dos seguintes comandos:
-Execução via script registrado no package.json: npm run json:server:routes
-Ou via Execução explícita: json-server --watch db.json --routes routes.json
-O comando para execução do JSON Server deve ser aplicado no diretório raiz do projeto, ou seja, que contém o arquivo db.json e routes.json.
-Por padrão, a aplicação JSON Server executa no endereço localhost:3000
-Executar o projeto frontend.
+Executar a API Fake (JSON Server):
+```
+npx json-server db.json
+```
