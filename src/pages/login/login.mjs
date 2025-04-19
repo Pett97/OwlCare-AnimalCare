@@ -1,6 +1,7 @@
 import { USER_LOGIN, USER_PWD } from "../../conts.mjs";
 
 document.addEventListener("DOMContentLoaded", function () {
+  console.log(USER_LOGIN, USER_PWD);
   function _limparLocalStorage() {
     localStorage.clear();
   }
