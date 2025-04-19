@@ -70,7 +70,7 @@ export class ServiceOrder {
 
   async updateOrder(data) {
     if (!data) {
-      alert("Erro ao atualizar ordem: dados ausentes");
+      //alert("Erro ao atualizar ordem: dados ausentes");
       return;
     }
 
@@ -88,11 +88,11 @@ export class ServiceOrder {
       }
 
       const responseData = await response.json();
-      alert("Ordem Atualizada com Sucesso!");
+      //alert("Ordem Atualizada com Sucesso!");
       console.log("Resposta do servidor:", responseData);
       return responseData;
     } catch (error) {
-      alert("Erro ao atualizar ordem");
+      //alert("Erro ao atualizar ordem");
       console.error(error);
       return;
     }

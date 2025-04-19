@@ -1,14 +1,18 @@
-#list-client{
+#list-client {
    margin: 15px;
 }
 
-#linha-cliente{
+#linha-cliente {
    border-width: 5px;
    border-color: red;
 }
 
-#tabela_cliente{
+#tabela_cliente {
    border-width: 5px;
-   border-color:blue;
+   border-color: blue;
 }
 
+
+.horizontal:hover {
+   background-color: #f3e5f5;
+}

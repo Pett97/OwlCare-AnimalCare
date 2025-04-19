@@ -1,6 +1,11 @@
 const URL_PRODUCTS = "http://localhost:3000/produtos";
+import { userIsAuthenticated } from "../../services/check-user.mjs";
 
 document.addEventListener("DOMContentLoaded", async function () {
+
+   if(!userIsAuthenticated() == true){
+      window.location.href = "./login/login.html";
+    }
   async function getProdutos() {
     try {
       const response = await fetch(URL_PRODUCTS);

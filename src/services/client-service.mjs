@@ -1,7 +1,7 @@
 const URL_CLIENTS = "http://localhost:3000/clientes";
 
 import { Client } from "./client.mjs";
-
+   
 export class ServiceClient {
 
    _buildClient(data) {
@@ -44,7 +44,7 @@ export class ServiceClient {
 
       let c = this._buildClient(data);
       if (c == false) {
-         alert("erro ao salvar cliente");
+         //alert("erro ao salvar cliente");
       } else {
          try {
             const response = await fetch(URL_CLIENTS, {
@@ -67,10 +67,10 @@ export class ServiceClient {
             }
 
             const data = await response.json();
-            alert("Cliente Salvo Com Sucesso ");
+            //alert("Cliente Salvo Com Sucesso ");
             return;
          } catch (error) {
-            alert("Erro ao salvar cliente");
+            //alert("Erro ao salvar cliente");
             console.error(error);
             return;
          }
@@ -81,7 +81,7 @@ export class ServiceClient {
    async updateClient(data) {
       let c = this._buildClient(data);
       if (c == false) {
-         alert("erro ao atualizar cliente");
+         //alert("erro ao atualizar cliente");
       } else {
          try {
             const response = await fetch(`${URL_CLIENTS}/${c.id}`, {
@@ -105,10 +105,10 @@ export class ServiceClient {
 
             const data = await response.json();
             console.log(data);
-            alert("Cliente Atualizado Com Sucesso ");
+            //alert("Cliente Atualizado Com Sucesso ");
             return;
          } catch (error) {
-            alert("Erro ao Atualizar cliente");
+            //alert("Erro ao Atualizar cliente");
             console.error(error);
             return;
          }

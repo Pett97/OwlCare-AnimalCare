@@ -1,14 +1,6 @@
 {
   "clientes": [
     {
-      "clientName": "Kety",
-      "email": "anateste@gmail.com",
-      "phone": "912545091",
-      "whatsapp": "1",
-      "obs": "123123",
-      "id": "1743559358455"
-    },
-    {
       "clientName": "barbara",
       "email": "teste@gmail.com",
       "phone": "91241506",
@@ -17,50 +9,47 @@
       "id": "1743903256616"
     },
     {
-      "clientName": "ana luiz2",
+      "clientName": "ana asdasdasdasd",
       "email": "anaspke@gmail.com",
       "phone": "91241506",
       "whatsapp": "1",
       "obs": "asdasdasd",
       "id": "1744690987948"
+    },
+    {
+      "id": "1745037013758",
+      "clientName": "caio",
+      "email": "caioteste@gmail.com",
+      "phone": "123123123",
+      "whatsapp": "1",
+      "obs": "123213333"
+    },
+    {
+      "id": "1745037056468",
+      "clientName": "fernanda",
+      "email": "fernanda@gmail.com",
+      "phone": "123123",
+      "whatsapp": "0",
+      "obs": "231231231231"
     }
   ],
   "ordemServico": [
     {
       "id": "1744690503049",
       "client": {
-        "id": "1743903256616",
         "clientName": "barbara",
         "email": "teste@gmail.com",
-        "phone": "91241506",
-        "whatsapp": "0",
-        "obs": "12312321"
+        "phone": "91241506"
       },
-      "status": "CANCELADO",
-      "service": "CONSULTA"
+      "status": "PAGO",
+      "service": "BANHO"
     },
     {
       "id": "1744691023730",
       "client": {
-        "id": "1744690987948",
         "clientName": "ana luiza",
         "email": "anaspke@gmail.com",
-        "phone": "91241506",
-        "whatsapp": "1",
-        "obs": "asdasdasd"
-      },
-      "status": "PAGO",
-      "service": "TOSA"
-    },
-    {
-      "id": "1744755196891",
-      "client": {
-        "id": "1744690987948",
-        "clientName": "ana luiz2",
-        "email": "anaspke@gmail.com",
-        "phone": "91241506",
-        "whatsapp": "1",
-        "obs": "asdasdasd"
+        "phone": "91241506"
       },
       "status": "PENDENTE",
       "service": "TOSA"

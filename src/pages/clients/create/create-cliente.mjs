@@ -1,37 +1,72 @@
 import { ServiceClient } from "../../../services/client-service.mjs";
+import { userIsAuthenticated } from "../../../services/check-user.mjs";
 
-document.addEventListener('DOMContentLoaded', function () {
-    let service = new ServiceClient;
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems);
-    let btnCadastrar = document.getElementById('store-client');
+document.addEventListener("DOMContentLoaded", () => {
+  if (!userIsAuthenticated()) {
+    window.location.href = "../login/login.html";
+    return;
+  }
 
-    btnCadastrar.addEventListener('click', function (event) {
-        event.preventDefault(); // Impede o envio do formulário
-        storeClient();
-    });
+  const service = new ServiceClient();
+  const formClient = document.getElementById("form-client");
 
-    let idAleatorio = () => {
-        return Date.now()+"";
+  const inputNameClient = document.getElementById("client_name");
+  const inputEmailClient = document.getElementById("email_client");
+  const inputPhoneClient = document.getElementById("phone_client");
+  const selectPhoneWhatsapp = document.getElementById("phone-whatsapp");
+  const obsClient = document.getElementById("obs_client");
+
+  M.FormSelect.init(selectPhoneWhatsapp);
+
+  formClient.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    //confere o emil
+    //teste te!!!!!ste@gmail.com
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const emailInput = inputEmailClient.value.trim();
+    if (!emailRegex.test(emailInput)) {
+      M.toast({
+        html: "Por favor, insira um e-mail válido.",
+        classes: "red darken-2",
+      });
+      return;
+    }
+
+    if (!formClient.checkValidity()) {
+      M.toast({
+        html: "Preencha todos os campos corretamente",
+        classes: "red darken-2",
+      });
+      return;
+    }
+
+    let id = Date.now() + "";
+
+    const data = {
+      id: id,
+      clientName: inputNameClient.value.trim(),
+      email: emailInput,
+      phone: inputPhoneClient.value.trim(),
+      whatsapp: selectPhoneWhatsapp.value,
+      obs: obsClient.value.trim(),
     };
 
-    async function storeClient() {
-        let nameClient = document.getElementById('client_name');
-        let emailClient = document.getElementById('email_client');
-        let phoneClient = document.getElementById('phone_client');
-        let whatsapp = document.getElementById('phone-whatsapp')
-        let obsClient = document.getElementById('obs_client');
-
-        let data = {
-            id : idAleatorio(),
-            clientName : nameClient.value,
-            email : emailClient.value,
-            phone : phoneClient.value,
-            whatsapp : whatsapp.value,
-            obs : obsClient.value
-        }
-        await service.storeClient(data);
+    try {
+      await service.storeClient(data);
+      M.toast({
+        html: "Cliente cadastrado com sucesso!",
+        classes: "green darken-2",
+      });
+      formClient.reset();
+      M.updateTextFields();
+      M.FormSelect.init(selectPhoneWhatsapp);
+    } catch (error) {
+      console.log(error);
+      M.toast({
+        html: "Erro ao cadastrar cliente",
+        classes: "red darken-2",
+      });
     }
+  });
 });
-
-

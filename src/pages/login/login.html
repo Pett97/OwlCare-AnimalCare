@@ -5,17 +5,19 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <!-- Compiled and minified CSS -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.2.2/dist/css/materialize.min.css">
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    <link rel="stylesheet" href="../index-style.css">
-   <title>OwlFlow</title>
+   <link rel="stylesheet" href="./style.login.css">
+   <title>OwnCare</title>
 </head>
 
 <body>
    <header>
-      <nav>
-         <div class="nav-wrapper blue darken-3">
-            <a href="#" class="brand-logo center">OwlFlow</a>
+      <nav class="nav navbar deep-purple lighten-1">
+         <div class="nav-wrapper">
+            <a href="#!" class="brand-logo center"><span class="white-text text-darken-2">OwnCare</span></a>
          </div>
       </nav>
    </header>
@@ -24,27 +26,29 @@
          <p class="center">Seu Sistema AnimalCare</p>
       </section>
    </div>
-   <div class="row center">
-      <div class="row">
-         <form class="col s12">
-            <div class="row">
-               <div class="input-field col s12 m12 l12">
-                  <i class="material-icons prefix">account_circle</i>
-                  <input id="email_user" type="email" class="validate" required>
-                  <label for="email_user">Email</label>
-               </div>
-               <div class="input-field col s6 m12 l12">
-                  <i class="material-icons prefix">password</i>
-                  <input id="user_pwd" type="tel" class="validate" required>
-                  <label for="user_pwd">Senha</label>
-               </div>
-            </div>
-         </form>
+   <form id="loginForm" class="row" style="gap: 1em;">
+      <div class="s12 m12 l12 input-field outlined">
+        <input id="login_user" type="text" maxlength="20" required>
+        <label for="login_user">Login</label>
+        <span class="supporting-text">Digite seu Login</span>
       </div>
-   </div>
+    
+      <div class="s12 m12 l12 input-field outlined">
+        <input id="login_pwd" type="password" maxlength="20" required>
+        <label for="login_pwd">Senha</label>
+        <span class="supporting-text">Digite sua Senha</span>
+      </div>
+    
+      <button class="btn-large icon-right waves-effect waves-light blue darken-4" type="submit" name="action">
+        <span class="white-text">Login</span><i class="material-icons right"><span class="white-text">send</span></i>
+      </button>
+    </form>
+    
+
 
    <!-- Compiled and minified JavaScript -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.2.2/dist/js/materialize.min.js"></script>
+   <script type="module" src="./login.mjs"></script>
 </body>
 
 </html>

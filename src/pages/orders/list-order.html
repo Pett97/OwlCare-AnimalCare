@@ -7,16 +7,31 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    <link rel="stylesheet" href="../index-style.css">
-   <title>OwlFlow</title>
+   <title>OwnCare</title>
 </head>
 
 <body>
    <header>
-      <nav>
-         <div class="nav-wrapper deep-purple lighten-1">
-            <a href="#" class="brand-logo center">OwlFlow</a>
-         </div>
-      </nav>
+      <section>
+
+         <nav class="nav navbar deep-purple lighten-1">
+            <div class="nav-wrapper">
+               <a href="#!" class="brand-logo center"><span class="white-text text-darken-2">OwnCare</span></a>
+               <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons"><span
+                        class="white-text text-darken-2">menu</span></i></a>
+               <ul class="right hide-on-med-and-down">
+                  <li><a href="../index.html"><span class="white-text text-darken-2">Voltar</span></a></li>
+                  <li><a href="../orders/create/form.html"><span class="white-text text-darken-2">Criar Ordem</span></a>
+                  </li>
+               </ul>
+            </div>
+         </nav>
+
+         <ul class="sidenav deep-purple lighten-1" id="mobile-demo">
+            <li><a href="../index.html"><span class="white-text text-darken-2">Voltar</span></a></li>
+            <li><a href="../orders/create/form.html"><span class="white-text text-darken-2">Criar Ordem</span></a></li>
+         </ul>
+      </section>
    </header>
    <div>
       <section>
@@ -24,17 +39,13 @@
       </section>
    </div>
    <div class="row">
-      <div class="col s12 m12 l12">
-         <a href="../index.html">Voltar</a>
-         <a href="../orders/create/form.html">Criar Ordem</a>
-      </div>
-   <section id="list-carts">
-      <div class="row" id="row-list-carts">
-         <!-- Preenchido por JS -->>
-      </div>
-   </section>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-   <script type="module" src="./list-order.mjs"></script>
+      <section id="list-carts">
+         <div class="row" id="row-list-carts">
+            <!-- Preenchido por JS -->>
+         </div>
+      </section>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+      <script type="module" src="./list-order.mjs"></script>
 </body>
 
 </html>

@@ -7,14 +7,14 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>OwlFlow</title>
+    <title>OwnCare</title>
 </head>
 
 <body>
     <header>
         <nav>
-            <div class="nav-wrapper blue darken-3">
-                <a href="#" class="brand-logo center">OwlFlow</a>
+            <div class="nav-wrapper deep-purple lighten-1">
+                <a href="#" class="brand-logo center">OwnCare</a>
             </div>
         </nav>
     </header>
@@ -30,10 +30,10 @@
     </div>
     <div class="row center">
         <div class="row">
-            <form>
+            <form id="form-client" >
                 <div class="input-field col s12 l6">
                     <i class="material-icons prefix">account_circle</i>
-                    <input type="text" id="client_name" class="validate" required>
+                    <input type="text" id="client_name" class="validate" minlength="3" required>
                     <label for="client_name">Nome Cliente</label>
                 </div>
 
@@ -62,7 +62,7 @@
                     <label for="obs_client">Observação</label>
                 </div>
                 <div class="col s12 m12 l12 ">
-                    <button class="btn waves-effect waves-light blue darken-3 " type="button" id="store-client" name="store-client">Cadastrar
+                    <button class="btn waves-effect waves-light blue darken-3 " type="submit" id="store-client" name="store-client">Cadastrar
                         <i class="material-icons right">send</i>
                     </button>
                 </div>

@@ -1,11 +1,20 @@
 import { ServiceOrder } from "../../services/order-service.mjs";
+import { userIsAuthenticated } from "../../services/check-user.mjs";
 
 document.addEventListener("DOMContentLoaded", function () {
+
+  if (!userIsAuthenticated() == true) {
+    window.location.href = "../login/login.html";
+  }
+  //navabar
+  const elemsNav = document.querySelectorAll(".sidenav");
+  const instancesNav = M.Sidenav.init(elemsNav);
+
   let service = new ServiceOrder();
   let idPedidoAction;
 
   function clearLocalStorage() {
-    localStorage.clear();
+    localStorage.removeItem("idOrderAction");
   }
 
   async function listOrders() {
@@ -14,28 +23,30 @@ document.addEventListener("DOMContentLoaded", function () {
     let rowList = document.getElementById("row-list-carts");
 
     rowList.innerHTML = "";
-    let s = '';
+    let s = "";
 
     orders.forEach((order) => {
-      
-      s+= `
+      s += `
       <div class="col s12 m6 l3">
                     <div class="card deep-purple lighten-1">
                <div class="card-content white-text">
                   <span class="card-title">${order.id} - ${order.client.clientName}</span>
-                  <p>${order.client.email}</p>
-                  <p>${order.client.phone}</p>
-                  <p>Status; ${order.status}</p>
-                  <p>Serviço: ${order.service}</p>
+                  <p><span class="white-text">${order.client.email}</span></p>
+                  <p class="white-text">${order.client.phone}</p>
+                  <p class="white-text">Status; ${order.status}</p>
+                  <p class="white-text">Serviço: ${order.service}</p>
                </div>
                <div class="card-action">
-                  <a data-id="${order.id}" onclick="editarPedido(event)">Editar</a>
-                  <a data-id="${order.id}" onclick="deletarOrderm(event)">Deletar</a>
+               <a data-id="${order.id}" onclick="editarPedido(event)" class="btn-small icon-right waves-effect waves-light yellow darken-1 ">
+                    <i class="material-icons">edit</i>Editar
+                </a>
+                <a data-id="${order.id}" onclick="deletarOrderm(event)" class="btn-small icon-right waves-effect waves-light red ">
+                    <i class="material-icons">delete</i>Deletar
+                </a> 
                </div>
             </div>
             </div>
         `;
-      
     });
     rowList.innerHTML = s;
   }

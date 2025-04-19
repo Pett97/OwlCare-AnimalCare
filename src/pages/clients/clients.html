@@ -8,27 +8,38 @@
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    <link rel="stylesheet" href="../index-style.css">
    <link rel="stylesheet" href="./clients-style.css">
-   <title>OwlFlow</title>
+   <title>OwnCare</title>
 </head>
 
 <body>
    <header>
-      <nav>
-         <div class="nav-wrapper blue darken-3">
-            <a href="#" class="brand-logo center">OwlFlow</a>
+      <nav class="nav navbar deep-purple lighten-1">
+         <div class="nav-wrapper">
+            <a href="#!" class="brand-logo center"><span class="white-text text-darken-2">OwnCare</span></a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons"><span
+                     class="white-text text-darken-2">menu</span></i></a>
+            <ul class="right hide-on-med-and-down">
+               <li><a href="../login/login.html"><span class="white-text text-darken-2">Login</span></a></li>
+               <li><a href="../orders/list-order.html"><span class="white-text text-darken-2">Servicos</span></a></li>
+               <li><a href="../products/products.html"><span class="white-text text-darken-2">Produtos</span></a></li>
+               <li><a href="../clients/create/create-client.html"><span class="white-text text-darken-2">Criar
+                        Cliente</span></a></li>
+            </ul>
          </div>
       </nav>
+
+      <ul class="sidenav" id="mobile-demo">
+         <li><a href="../login/login.html"><span class="black-text text-darken-2">Login</span></a></li>
+         <li><a href="../orders/list-order.html"><span class="black-text text-darken-2">Servicos</span></a></li>
+         <li><a href="../products/products.html"><span class="black-text text-darken-2">Produtos</span></a></li>
+         <li><a href="../clients/create/create-client.html"><span class="black-text text-darken-2">Criar
+                  Cliente</span></a></li>
+      </ul>
    </header>
    <div>
       <section>
          <p class="center">Lista de Clientes</p>
       </section>
-   </div>
-   <div class="row">
-      <div class="col s12 m12 l12">
-         <a href="../orders/list-order.html">Serviço</a>
-         <a href="../clients/create/create-client.html">Criar Cliente</a>
-      </div>
    </div>
    <section id="list-client">
    </section>
