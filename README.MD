@@ -71,7 +71,7 @@ GitHub: https://github.com/Pett97/OwlCare-AnimalCare
 #### RA4 - Bibliotecas de Funções e Componentes JavaScript
 * [X] ID21: Uso da biblioteca jQuery para manipulação do DOM e aprimoramento da interatividade da aplicação.
 
-* [ ] ID22: Integração com um plugin jQuery (como o jQuery Mask Plugin) para melhorar a funcionalidade da interface (Em andamento).
+* [X] ID22: Integração com um plugin jQuery (como o jQuery Mask Plugin) para melhorar a funcionalidade da interface (Em andamento).
 
 * [ ] ID23: Uso de bibliotecas de web components como Lit, para criar componentes reutilizáveis e melhorar a modularidade (Em andamento).
 

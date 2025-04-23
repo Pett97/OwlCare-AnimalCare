@@ -341,6 +341,11 @@ ipaddr.js@^2.2.0:
   resolved "https://registry.yarnpkg.com/ipaddr.js/-/ipaddr.js-2.2.0.tgz#d33fa7bac284f4de7af949638c9d68157c6b92e8"
   integrity sha512-Ag3wB2o37wslZS19hZqorUnrnzSkpOVy+IiiDEiTqNubEYpYuHWIf6K4psgN2ZWKExS4xhVCrRVfb/wfW8fWJA==
 
+jquery-mask-plugin@1.14.16:
+  version "1.14.16"
+  resolved "https://registry.yarnpkg.com/jquery-mask-plugin/-/jquery-mask-plugin-1.14.16.tgz#9ebb55947d984da5aade45315b2fe6b113e28aae"
+  integrity sha512-reywdHlYEkPbzWjTpcc1fk9XQ3PLvO5dzEAVqy8zI7NTF22tB1HbeU3iboZTLdkBEPaWAqeI2HtEjsGQ4roZKw==
+
 json-server@^1.0.0-beta.3:
   version "1.0.0-beta.3"
   resolved "https://registry.yarnpkg.com/json-server/-/json-server-1.0.0-beta.3.tgz#dfbbc2cd3fd9faea419586ae045c00a8fd6084ca"

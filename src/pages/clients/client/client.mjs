@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const service = new ServiceClient();
   const formClient = document.getElementById("form-client");
-
   const inputNameClient = document.getElementById("client_name");
   const inputEmailClient = document.getElementById("email_client");
   const inputPhoneClient = document.getElementById("phone_client");
@@ -27,13 +26,14 @@ document.addEventListener("DOMContentLoaded", function () {
       inputNameClient.value = client.clientName || "";
       inputEmailClient.value = client.email || "";
       inputPhoneClient.value = client.phone || "";
+      $('#phone_client').mask('(00) 0000-0000');
       selectPhoneWhatsapp.value = client.whatsapp ? "1" : "0";
       obsClient.value = client.obs || "";
 
       M.updateTextFields();
       M.FormSelect.init(selectPhoneWhatsapp);
 
-      // Foco nos campos se já houver valores
+      // Foco nos campos para o css ficar ok 
       if (inputNameClient.value) inputNameClient.focus();
       if (inputEmailClient.value) inputEmailClient.focus();
       if (inputPhoneClient.value) inputPhoneClient.focus();
@@ -53,25 +53,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
   async function updateClient(event) {
     event.preventDefault();
-
-    // Validação do formulário
+  
+    if (!formClient) {
+      console.error("Formulário não encontrado.");
+      return;
+    }
+  
+    // Atualiza a UI dos campos manualmente
+    formClient.querySelectorAll('input, textarea').forEach(input => {
+      input.dispatchEvent(new Event('input'));
+    });
+  
     if (!formClient.checkValidity()) {
+      formClient.reportValidity(); // mostra os erros visuais pro usuário
       M.toast({
         html: "Preencha todos os campos corretamente",
         classes: "red darken-2",
       });
       return;
     }
-
+  
     const data = {
       id: localStorage.getItem("idClientForEdit"),
       clientName: inputNameClient.value.trim(),
       email: inputEmailClient.value.trim(),
-      phone: inputPhoneClient.value.trim(),
+      phone: inputPhoneClient.value.replace(/\D/g, ''),
       whatsapp: selectPhoneWhatsapp.value,
       obs: obsClient.value.trim(),
     };
-
+  
     try {
       await service.updateClient(data);
       M.toast({

@@ -25,9 +25,9 @@
    </div>
    <div class="row">
       <div class="col s12 m12 l12">
-          <a href="../clients.html">Voltar</a>
+         <a href="../clients.html">Voltar</a>
       </div>
-  </div>
+   </div>
    <section id="list-client">
       <div class="row center">
          <div class="row">
@@ -46,7 +46,7 @@
 
                <div class="input-field col s12 m6 l6">
                   <i class="material-icons prefix">phone</i>
-                  <input type="tel" id="phone_client" class="validate" required pattern="\d+"
+                  <input type="tel" id="phone_client" class="validate" required
                      title="Apenas números são permitidos">
                   <label for="phone_client" data-error="wrong" data-success="right">Celular Cliente</label>
                </div>
@@ -75,6 +75,14 @@
    </section>
    <!-- Compiled and minified JavaScript -->
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+   <script>
+      $(document).ready(function () {
+         $('#phone_client').mask('(00) 0000-0000');
+      });
+   </script>
    <script type="module" src="./client.mjs"></script>
 </body>
 
