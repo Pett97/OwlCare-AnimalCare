@@ -1,7 +1,7 @@
-import { userIsAuthenticated } from "../services/check-user.mjs";
+import {userIsAuthenticated} from "./src/services/check-user.mjs"
 document.addEventListener("DOMContentLoaded", function () {
   if(!userIsAuthenticated() == true){
-    window.location.href = "./login/login.html";
+    window.location.href = "./src/pages/login/login.html";
   }
 
   //navabar

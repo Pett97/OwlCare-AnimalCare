@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Login Realizado com sucesso");
 
       // redirecionar se quiser:
-      window.location.href = "../index.html";
+      window.location.href = "../../../index.html";
     } else {
       localStorage.setItem("USUARIO_AUTENTICADO", "false");
       alert("Login inválido. Tente novamente");
