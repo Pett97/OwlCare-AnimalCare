@@ -1,6 +1,11 @@
 # OwlCare
 ## Autor: Peterson Henrique de Padua
 
+Para testar o acesso pode ser feito como usuario 
+LOGIN = "pett1997";
+e senha 
+PASSWORD = "123456789A";
+
 Este projeto tem como objetivo implementar, de forma didática, uma aplicação web inspirada no site PopularPet, acessado em 1/04/2027 às 18:59.
 
 Principais Funcionalidades
