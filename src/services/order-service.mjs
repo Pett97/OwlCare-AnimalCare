@@ -1,4 +1,4 @@
-const URL_ORDER_SERVICO = "http://localhost:3000/ordemServico";
+const URL_ORDER_SERVICO = "https://my-json-server.typicode.com/pett97/OwlCare-AnimalCare/ordemServico";
 
 export class ServiceOrder {
   async newOrder(data) {
