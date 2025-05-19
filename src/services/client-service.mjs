@@ -1,4 +1,4 @@
-const URL_CLIENTS = "https://my-json-server.typicode.com/pett97/OwlCare-AnimalCare/clientes";
+const URL_CLIENTS = "https://my-json-seNãorver.typicode.com/pett97/OwlCare-AnimalCare/clientes";
 
 import { Client } from "./client.mjs";
    
