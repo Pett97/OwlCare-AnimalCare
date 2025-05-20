@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="col s12 m6 l3">
                     <div class="card deep-purple lighten-1">
                <div class="card-content white-text">
-                  <span class="card-title">${order.id} - ${order.client.clientName}</span>
+                  <span class="card-title">${order.client.clientName}</span>
                   <p><span class="white-text">${order.client.email}</span></p>
                   <p class="white-text">${order.client.phone}</p>
                   <p class="white-text">Status; ${order.status}</p>

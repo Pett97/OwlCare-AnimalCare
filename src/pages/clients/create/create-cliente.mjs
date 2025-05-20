@@ -21,8 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   formClient.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    //confere o emil
-    //teste te!!!!!ste@gmail.com
+    //email 
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const emailInput = inputEmailClient.value.trim();
     if (!emailRegex.test(emailInput)) {
@@ -32,6 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       return;
     }
+
+    //celular
+    const phoneRegex = 
 
     if (!formClient.checkValidity()) {
       M.toast({

@@ -31,6 +31,12 @@ export class ServiceOrder {
     return this._getAllOrdersFromLocalStorage();
   }
 
+  getOrder(idOrder){
+    let orders = this._getAllOrdersFromLocalStorage();
+    let orderIndex = orders.findIndex(order=>order.id === idOrder);
+    return orders[orderIndex];
+  }
+
   storeNewOrder(data) {
     const orders = this._getAllOrdersFromLocalStorage();
 
@@ -62,4 +68,3 @@ export class ServiceOrder {
    }
 
   }
-}
