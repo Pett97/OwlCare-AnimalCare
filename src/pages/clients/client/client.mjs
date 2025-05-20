@@ -1,4 +1,5 @@
 import { ServiceClient } from "../../../services/client-service.mjs";
+
 import { userIsAuthenticated } from "../../../services/check-user.mjs";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -45,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   let idFromStorage = localStorage.getItem("idClientForEdit");
+  
   if (idFromStorage) {
     getCliente(idFromStorage);
   } else {

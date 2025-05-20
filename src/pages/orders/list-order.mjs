@@ -18,11 +18,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   async function listOrders() {
-    let orders = await service.getAll();
+    const orders = await service.getAll();
 
-    let rowList = document.getElementById("row-list-carts");
+    const rowList = document.getElementById("row-list-carts");
 
     rowList.innerHTML = "";
+    
     let s = "";
 
     orders.forEach((order) => {

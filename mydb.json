@@ -1,0 +1,74 @@
+{
+  "clientes": [
+    {
+      "clientName": "barbara",
+      "email": "teste@gmail.com",
+      "phone": "4291241506",
+      "whatsapp": "1",
+      "obs": "12312321",
+      "id": "1743903256616"
+    },
+    {
+      "clientName": "ana asdasdasdasd",
+      "email": "anaspke@gmail.com",
+      "phone": "4291241506",
+      "whatsapp": "1",
+      "obs": "asdasdasd",
+      "id": "1744690987948"
+    },
+    {
+      "clientName": "caio",
+      "email": "caioteste@gmail.com",
+      "phone": "3212312312",
+      "whatsapp": "1",
+      "obs": "123213333",
+      "id": "1745037013758"
+    },
+    {
+      "id": "1745037056468",
+      "clientName": "fernanda",
+      "email": "fernanda@gmail.com",
+      "phone": "123123",
+      "whatsapp": "0",
+      "obs": "231231231231"
+    },
+    {
+      "id": "1745361819190",
+      "clientName": "jesuina",
+      "email": "jesuina@gmail.com",
+      "phone": "5195195",
+      "whatsapp": "1",
+      "obs": "testete"
+    },
+    {
+      "id": "1745362108833",
+      "clientName": "aaaa",
+      "email": "aaa@teste.com.br",
+      "phone": "123123",
+      "whatsapp": "0",
+      "obs": "123123"
+    }
+  ],
+  "ordemServico": [
+    {
+      "id": "1744690503049",
+      "client": {
+        "clientName": "barbara",
+        "email": "teste@gmail.com",
+        "phone": "91241506"
+      },
+      "status": "PAGO",
+      "service": "BANHO"
+    },
+    {
+      "id": "1744691023730",
+      "client": {
+        "clientName": "ana luiza",
+        "email": "anaspke@gmail.com",
+        "phone": "91241506"
+      },
+      "status": "PENDENTE",
+      "service": "TOSA"
+    }
+  ]
+}

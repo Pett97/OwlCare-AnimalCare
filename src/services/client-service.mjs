@@ -1,169 +1,97 @@
-const URL_CLIENTS = "https://my-json-server.typicode.com/pett97/OwlCare-AnimalCare/clientes";
-
 import { Client } from "./client.mjs";
-   
+
 export class ServiceClient {
+
+   constructor() {
+      if (!localStorage.getItem("CLIENTES")) {
+         localStorage.setItem("CLIENTES", JSON.stringify([
+            {
+               clientName: "ana banana",
+               email: "anabanana@gmail.com",
+               phone: "4291241506",
+               whatsapp: "1",
+               obs: "12312321",
+               id: "1743903256616"
+            }
+         ]));
+      }
+   }
 
    _buildClient(data) {
       let c = new Client(data.id, data.clientName, data.email, data.phone, data.whatsapp, data.obs);
-      if (!c || !c.validationForm()) {
-         return false;
-      }
-      return c;
+      return c && c.validationForm() ? c : false;
    }
 
-   async getClient(idClient) {
-      if (!idClient) {
-         return;
-      }
-      try {
-         const response = await fetch(`${URL_CLIENTS}/${idClient}`, {
-            method: "GET",
-            headers: {
-               "Content-Type": "application/json",
-            }
-         });
-
-         if (!response.ok) {
-            throw new Error(`Erro ao Buscar Cliente com id${idClient}`);
-         }
-
-         const clientData = await response.json();
-         let client = this._buildClient(clientData);
-         if (client) {
-            return client;
-         } else {
-            return false;
-         }
-      } catch (error) {
-         console.log(error);
-      }
+   _getClientsFromStorage() {
+      return JSON.parse(localStorage.getItem("CLIENTES") || "[]");
    }
 
-   async storeClient(data) {
-
-      let c = this._buildClient(data);
-      if (c == false) {
-         //alert("erro ao salvar cliente");
-      } else {
-         try {
-            const response = await fetch(URL_CLIENTS, {
-               method: "POST",
-               headers: {
-                  "Content-Type": "application/json",
-               },
-               body: JSON.stringify({
-                  id: c.id,
-                  clientName: c.clientName,
-                  email: c.email,
-                  phone: c.phone,
-                  whatsapp: c.whatsapp,
-                  obs: c.obs,
-               }),
-            });
-
-            if (!response.ok) {
-               throw new Error("Erro ao salvar cliente");
-            }
-
-            const data = await response.json();
-            //alert("Cliente Salvo Com Sucesso ");
-            return;
-         } catch (error) {
-            //alert("Erro ao salvar cliente");
-            console.error(error);
-            return;
-         }
-      }
-
+   _saveClientsToStorage(clients) {
+      localStorage.setItem("CLIENTES", JSON.stringify(clients));
    }
 
-   async updateClient(data) {
-      let c = this._buildClient(data);
-      if (c == false) {
-         //alert("erro ao atualizar cliente");
-      } else {
-         try {
-            const response = await fetch(`${URL_CLIENTS}/${c.id}`, {
-               method: "PUT",
-               headers: {
-                  "Content-Type": "application/json",
-               },
-               body: JSON.stringify({
-                  id: this.id,
-                  clientName: c.clientName,
-                  email: c.email,
-                  phone: c.phone,
-                  whatsapp: c.whatsapp,
-                  obs: c.obs,
-               }),
-            });
+   getClient(idClient) {
+      if (!idClient) return;
 
-            if (!response.ok) {
-               throw new Error("Erro ao Atualizar cliente");
-            }
+      const clients = this._getClientsFromStorage();
+      const found = clients.find(c => c.id === idClient);
 
-            const data = await response.json();
-            console.log(data);
-            //alert("Cliente Atualizado Com Sucesso ");
-            return;
-         } catch (error) {
-            //alert("Erro ao Atualizar cliente");
-            console.error(error);
-            return;
-         }
-      }
-   }
-
-   async deleteClient(idClient) {
-      try {
-         const response = await fetch(`${URL_CLIENTS}/${idClient}`, {
-            method: "DELETE",
-            headers: {
-               "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-               id: this.id
-            }),
-         });
-
-         if (!response.ok) {
-            throw new Error("Erro ao deletar Cliente");
-         }
-
-         const data = await response.json();
-         console.log(data);
-         alert("Cliente Deletado Com Sucesso ");
-         return;
-      } catch (error) {
-         alert("Erro ao Deletar cliente");
-         console.error(error);
-         return;
+      if (found) {
+         return this._buildClient(found);
       }
 
+      return false;
    }
 
-   async getAllClients() {
-      try {
-         const response = await fetch(URL_CLIENTS, {
-            method: "GET",
-            headers: {
-               "Content-Type": "application/json",
-            },
-         });
+   storeClient(data) {
+      const c = this._buildClient(data);
+      if (!c) return false;
 
-         if (!response.ok) {
-            throw new Error("Erro ao buscar clientes");
-         }
+      const clients = this._getClientsFromStorage();
+      clients.push({
+         id: c.id,
+         clientName: c.clientName,
+         email: c.email,
+         phone: c.phone,
+         whatsapp: c.whatsapp,
+         obs: c.obs
+      });
 
-         const data = await response.json();
-         return data;
-      } catch (error) {
-         alert("Erro ao buscar clientes");
-         console.error(error);
-         return [];
-      }
+      this._saveClientsToStorage(clients);
+      return true;
    }
 
+   updateClient(data) {
+      const c = this._buildClient(data);
+      if (!c) return false;
 
+      let clients = this._getClientsFromStorage();
+      const index = clients.findIndex(client => client.id === c.id);
+      if (index === -1) return false;
+
+      clients[index] = {
+         id: c.id,
+         clientName: c.clientName,
+         email: c.email,
+         phone: c.phone,
+         whatsapp: c.whatsapp,
+         obs: c.obs
+      };
+
+      this._saveClientsToStorage(clients);
+      return true;
+   }
+
+   deleteClient(idClient) {
+      let clients = this._getClientsFromStorage();
+      const updated = clients.filter(client => client.id !== idClient);
+      if (updated.length === clients.length) return false; // nada foi removido
+
+      this._saveClientsToStorage(updated);
+      return true;
+   }
+
+   getAllClients() {
+      return this._getClientsFromStorage();
+   }
 }

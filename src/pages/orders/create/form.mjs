@@ -1,7 +1,5 @@
 import { ServiceOrder } from "../../../services/order-service.mjs";
 import { ServiceClient } from "../../../services/client-service.mjs";
-import { TYPE_OF_SERVICE } from "../../../conts.mjs";
-import { STATUS_OF_ODERS } from "../../../conts.mjs";
 import { userIsAuthenticated } from "../../../services/check-user.mjs";
 
 document.addEventListener("DOMContentLoaded", function () {
