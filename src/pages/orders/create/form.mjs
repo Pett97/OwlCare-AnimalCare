@@ -1,6 +1,7 @@
 import { ServiceOrder } from "../../../services/order-service.mjs";
 import { ServiceClient } from "../../../services/client-service.mjs";
 import { userIsAuthenticated } from "../../../services/check-user.mjs";
+import { TYPE_OF_SERVICE,STATUS_OF_ODERS } from "../../../conts.mjs";
 
 document.addEventListener("DOMContentLoaded", function () {
   
@@ -29,18 +30,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     M.FormSelect.init(selectClient);
 
-    TYPE_OF_SERVICE.forEach((service) => {
-      const option = document.createElement("option");
-      option.value = service;
-      option.textContent = service;
+    const TYPES = await TYPE_OF_SERVICE();
+    TYPES.forEach((service) => {
+      let option = document.createElement("option");
+      option.value = service.name;
+      option.textContent = service.name;
       selectService.appendChild(option);
     });
     M.FormSelect.init(selectService);
 
-    STATUS_OF_ODERS.forEach((status) => {
-      const option = document.createElement("option");
-      option.value = status;
-      option.textContent = status;
+    const STATUS = await STATUS_OF_ODERS();
+    STATUS.forEach((status) => {
+      let option = document.createElement("option");
+      option.value = status.status;
+      option.textContent = status.status;
       selectInitialStatus.appendChild(option);
     });
     M.FormSelect.init(selectInitialStatus);
@@ -66,11 +69,11 @@ document.addEventListener("DOMContentLoaded", function () {
       service: selectService.value,
     };
 
-    await orderService.newOrder(data);
+    await orderService.storeNewOrder(data);
     M.toast({ html: 'Pedido criado com sucesso!', classes: 'green darken-2' });
     setTimeout(() => {
       window.location.href = "../list-order.html";
-    }, 1500);
+    }, 77500);
   }
 
   btnCreateOrder.addEventListener("click", function (event) {

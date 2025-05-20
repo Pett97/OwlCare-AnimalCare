@@ -81,6 +81,11 @@ document.addEventListener("DOMContentLoaded", function () {
     window.deletClient = async function (event) {
       let idCliente = event.target.getAttribute("data-id");
       await service.deleteClient(idCliente);
+      M.toast({
+        html: "Cliente Deletado com sucesso!",
+        classes: "green darken-2",
+      });
+      setTimeout( window.location.reload(), 1000);
     };
   }
 

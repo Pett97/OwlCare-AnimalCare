@@ -83,6 +83,7 @@ export class ServiceClient {
    }
 
    deleteClient(idClient) {
+      console.log(idClient);  
       let clients = this._getClientsFromStorage();
       const updated = clients.filter(client => client.id !== idClient);
       if (updated.length === clients.length) return false; // nada foi removido

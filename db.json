@@ -1,4 +1,23 @@
 {
-  "types_of_service": ["BANHO", "TOSA", "CONSULTA", "VACINA"],
-  "status_of_orders": ["PAGO", "PENDENTE", "CANCELADO", "EM ABERTO"]
+  "types_of_service": [
+    { "id": 1, "name": "BANHO" },
+    { "id": 2, "name": "TOSA" },
+    { "id": 3, "name": "CONSULTA" },
+    { "id": 4, "name": "VACINA" }
+  ],
+  "status_of_orders": [
+    { "id": 1, "status": "PAGO" },
+    { "id": 2, "status": "PENDENTE" },
+    { "id": 3, "status": "CANCELADO" },
+    { "id": 4, "status": "EM ABERTO" }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "petName": "Rex",
+      "serviceTypeId": 1,
+      "statusId": 2,
+      "date": "2025-05-19"
+    }
+  ]
 }
