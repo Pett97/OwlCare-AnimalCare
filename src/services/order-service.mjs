@@ -31,9 +31,9 @@ export class ServiceOrder {
     return this._getAllOrdersFromLocalStorage();
   }
 
-  getOrder(idOrder){
+  getOrder(idOrder) {
     let orders = this._getAllOrdersFromLocalStorage();
-    let orderIndex = orders.findIndex(order=>order.id === idOrder);
+    let orderIndex = orders.findIndex((order) => order.id === idOrder);
     return orders[orderIndex];
   }
 
@@ -51,12 +51,12 @@ export class ServiceOrder {
     return success ? orders : null; // retorna o array atualizado
   }
 
-  updateOrder(data){
+  updateOrder(data) {
     let orders = this._getAllOrdersFromLocalStorage();
-    let index = orders.findIndex(order=>order.id === data.id);
-   if(index === -1) return false;
+    let index = orders.findIndex((order) => order.id === data.id);
+    if (index === -1) return false;
 
-   orders[index] = {
+    orders[index] = {
       id: data.id,
       client: data.client,
       status: data.status,
@@ -65,6 +65,14 @@ export class ServiceOrder {
 
     this._saveOrder(orders);
     return true;
-   }
-
   }
+
+  deleteOrder(orderId) {
+    let orders = this._getAllOrdersFromLocalStorage();
+    const updated = orders.filter((order) => order.id !== orderId);
+    if (updated.length === orders.length) return false;
+
+    this._saveOrder(updated);
+    return true;
+  }
+}

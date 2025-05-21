@@ -1,9 +1,7 @@
-
 import { ServiceOrder } from "../../services/order-service.mjs";
 import { userIsAuthenticated } from "../../services/check-user.mjs";
 
 document.addEventListener("DOMContentLoaded", function () {
-
   if (!userIsAuthenticated() == true) {
     window.location.href = "../login/login.html";
   }
@@ -24,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const rowList = document.getElementById("row-list-carts");
 
     rowList.innerHTML = "";
-    
+
     let s = "";
 
     orders.forEach((order) => {
@@ -67,8 +65,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  window.deletarOrderm = async function (event) {
+  window.deletarOrderm = async (event) => {
     let idOrderAction = event.target.getAttribute("data-id");
     await service.deleteOrder(idOrderAction);
+
+    let response = await service.deleteOrder(idOrderAction);
+    if (!response) {
+      M.toast({
+        html: "Erro ao remover cliente",
+        classes: "red darken-2",
+      });
+    } else {
+      M.toast({
+        html: "Cliente Removido com Sucesso",
+        classes: "green darken-2",
+      });
+    }
+    window.location.reload();
   };
 });

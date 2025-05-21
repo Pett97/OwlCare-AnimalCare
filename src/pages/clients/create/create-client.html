@@ -30,7 +30,7 @@
     </div>
     <div class="row center">
         <div class="row">
-            <form id="form-client" >
+            <form id="form-client">
                 <div class="input-field col s12 l6">
                     <i class="material-icons prefix">account_circle</i>
                     <input type="text" id="client_name" class="validate" minlength="3" required>
@@ -45,7 +45,8 @@
 
                 <div class="input-field col s12 m6 l6">
                     <i class="material-icons prefix">phone</i>
-                    <input type="tel" id="phone_client" class="validate" required pattern="\d+" title="Apenas números são permitidos">
+                    <input type="tel" id="phone_client" class="validate" required pattern="\(\d{2}\)\d{8,9}"
+                        title="Formato esperado: (DD)XXXXXXXX ou (DD)9XXXXXXXX" />
                     <label for="phone_client" data-error="wrong" data-success="right">Celular Cliente</label>
                 </div>
                 <div class="input-field col s12 m6 l6">
@@ -62,7 +63,8 @@
                     <label for="obs_client">Observação</label>
                 </div>
                 <div class="col s12 m12 l12 ">
-                    <button class="btn waves-effect waves-light blue darken-3 " type="submit" id="store-client" name="store-client">Cadastrar
+                    <button class="btn waves-effect waves-light blue darken-3 " type="submit" id="store-client"
+                        name="store-client">Cadastrar
                         <i class="material-icons right">send</i>
                     </button>
                 </div>
@@ -72,7 +74,9 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script  type="module" src="./create-cliente.mjs"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script type="module" src="./create-cliente.mjs"></script>
 </body>
 
 </html>

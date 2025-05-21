@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   formClient.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    //email 
+    //email
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const emailInput = inputEmailClient.value.trim();
     if (!emailRegex.test(emailInput)) {
@@ -33,7 +33,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     //celular
-    const phoneRegex = 
+
+    $(document).ready(function () {
+      $("#phone_client").mask(function (val) {
+        return val.replace(/\D/g, "").length === 11
+          ? "(00)000000000"
+          : "(00)00000000";
+      });
+    });
 
     if (!formClient.checkValidity()) {
       M.toast({
