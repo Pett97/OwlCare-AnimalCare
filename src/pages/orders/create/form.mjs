@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const TYPES = await TYPE_OF_SERVICE();
     TYPES.forEach((service) => {
+      console.log("123123123");
       let option = document.createElement("option");
       option.value = service.name;
       option.textContent = service.name;
@@ -49,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
     M.FormSelect.init(selectInitialStatus);
   };
 
-  let idOrder = Date.now() + ""; // ID único baseado no timestamp
+  let idOrder = Date.now() + ""; // ID único baseado no timestamp xaxho
 
   async function getClienteById(id) {
     return await clientService.getClient(id);
@@ -73,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
     M.toast({ html: 'Pedido criado com sucesso!', classes: 'green darken-2' });
     setTimeout(() => {
       window.location.href = "../list-order.html";
-    }, 77500);
+    }, 1500);
   }
 
   btnCreateOrder.addEventListener("click", function (event) {

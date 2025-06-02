@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Atualiza a UI dos campos manualmente
+
     formClient.querySelectorAll("input, textarea").forEach((input) => {
       input.dispatchEvent(new Event("input"));
     });

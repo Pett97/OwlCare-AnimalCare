@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
       formClient.reset();
       M.updateTextFields();
       M.FormSelect.init(selectPhoneWhatsapp);
+      window.location.href = "../clients.html";
     } catch (error) {
       console.log(error);
       M.toast({
