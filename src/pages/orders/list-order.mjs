@@ -2,12 +2,11 @@ import { ServiceOrder } from "../../services/order-service.mjs";
 import { userIsAuthenticated } from "../../services/check-user.mjs";
 
 document.addEventListener("DOMContentLoaded", function () {
-
   if (!userIsAuthenticated() == true) {
     window.location.href = "../login/login.html";
   }
-  //navabar
   const elemsNav = document.querySelectorAll(".sidenav");
+
   const instancesNav = M.Sidenav.init(elemsNav);
 
   let service = new ServiceOrder();
@@ -18,11 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   async function listOrders() {
-    let orders = await service.getAll();
+    const orders = await service.getAll();
 
-    let rowList = document.getElementById("row-list-carts");
+    const rowList = document.getElementById("row-list-carts");
 
     rowList.innerHTML = "";
+
     let s = "";
 
     orders.forEach((order) => {
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="col s12 m6 l3">
                     <div class="card deep-purple lighten-1">
                <div class="card-content white-text">
-                  <span class="card-title">${order.id} - ${order.client.clientName}</span>
+                  <span class="card-title">${order.client.clientName}</span>
                   <p><span class="white-text">${order.client.email}</span></p>
                   <p class="white-text">${order.client.phone}</p>
                   <p class="white-text">Status; ${order.status}</p>
@@ -65,8 +65,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  window.deletarOrderm = async function (event) {
+  window.deletarOrderm = async (event) => {
     let idOrderAction = event.target.getAttribute("data-id");
     await service.deleteOrder(idOrderAction);
+
+    let response = await service.deleteOrder(idOrderAction);
+    if (!response) {
+      M.toast({
+        html: "Erro ao remover cliente",
+        classes: "red darken-2",
+      });
+    } else {
+      M.toast({
+        html: "Cliente Removido com Sucesso",
+        classes: "green darken-2",
+      });
+    }
+    window.location.reload();
   };
 });

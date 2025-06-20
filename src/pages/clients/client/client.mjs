@@ -1,4 +1,5 @@
 import { ServiceClient } from "../../../services/client-service.mjs";
+
 import { userIsAuthenticated } from "../../../services/check-user.mjs";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -26,44 +27,50 @@ document.addEventListener("DOMContentLoaded", function () {
       inputNameClient.value = client.clientName || "";
       inputEmailClient.value = client.email || "";
       inputPhoneClient.value = client.phone || "";
-      $('#phone_client').mask('(00) 0000-0000');
       selectPhoneWhatsapp.value = client.whatsapp ? "1" : "0";
       obsClient.value = client.obs || "";
 
       M.updateTextFields();
       M.FormSelect.init(selectPhoneWhatsapp);
 
-      // Foco nos campos para o css ficar ok 
+      // Foco nos campos para o css ficar ok
       if (inputNameClient.value) inputNameClient.focus();
       if (inputEmailClient.value) inputEmailClient.focus();
       if (inputPhoneClient.value) inputPhoneClient.focus();
       if (obsClient.value) obsClient.focus();
-
     } catch (error) {
       alert("Erro ao carregar dados do cliente");
     }
   }
 
   let idFromStorage = localStorage.getItem("idClientForEdit");
+
   if (idFromStorage) {
     getCliente(idFromStorage);
   } else {
     alert("ID do cliente não encontrado no localStorage.");
   }
 
+  $(document).ready(function () {
+    $("#phone_client").mask(function (val) {
+      return val.replace(/\D/g, "").length === 11
+        ? "(00)000000000"
+        : "(00)00000000";
+    });
+  });
   async function updateClient(event) {
     event.preventDefault();
-  
+
     if (!formClient) {
       console.error("Formulário não encontrado.");
       return;
     }
-  
-    // Atualiza a UI dos campos manualmente
-    formClient.querySelectorAll('input, textarea').forEach(input => {
-      input.dispatchEvent(new Event('input'));
+
+
+    formClient.querySelectorAll("input, textarea").forEach((input) => {
+      input.dispatchEvent(new Event("input"));
     });
-  
+
     if (!formClient.checkValidity()) {
       formClient.reportValidity(); // mostra os erros visuais pro usuário
       M.toast({
@@ -72,16 +79,16 @@ document.addEventListener("DOMContentLoaded", function () {
       });
       return;
     }
-  
+
     const data = {
       id: localStorage.getItem("idClientForEdit"),
       clientName: inputNameClient.value.trim(),
       email: inputEmailClient.value.trim(),
-      phone: inputPhoneClient.value.replace(/\D/g, ''),
+      phone: inputPhoneClient.value.replace(/\D/g, ""),
       whatsapp: selectPhoneWhatsapp.value,
       obs: obsClient.value.trim(),
     };
-  
+
     try {
       await service.updateClient(data);
       M.toast({

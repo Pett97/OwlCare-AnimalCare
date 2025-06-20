@@ -1,9 +1,8 @@
-import { ServiceOrder } from "../../../services/order-service.mjs";
-import { TYPE_OF_SERVICE } from "../../../conts.mjs";
-import { STATUS_OF_ODERS } from "../../../conts.mjs";
 import { userIsAuthenticated } from "../../../services/check-user.mjs";
+import { ServiceOrder } from "../../../services/order-service.mjs";
+import { TYPE_OF_SERVICE, STATUS_OF_ODERS } from "../../../conts.mjs";
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", async function () {
   if (!userIsAuthenticated()) {
     window.location.href = "../../login/login.html";
     return;
@@ -20,22 +19,30 @@ document.addEventListener("DOMContentLoaded", function () {
   let service = new ServiceOrder();
   let idOrder = localStorage.getItem("idOrderAction");
 
-  TYPE_OF_SERVICE.forEach((tipo) => {
-    const option = document.createElement("option");
-    option.value = tipo;
-    option.textContent = tipo;
-    selectTipoServico.appendChild(option);
-  });
+  async function loadSelectOptions() {
+    const TYPES = await TYPE_OF_SERVICE();
+    const STATUS = await STATUS_OF_ODERS();
 
-  STATUS_OF_ODERS.forEach((status) => {
-    const option = document.createElement("option");
-    option.value = status;
-    option.textContent = status;
-    selectStatusPagamento.appendChild(option);
-  });
+    TYPES.forEach((tipo) => {
+      const option = document.createElement("option");
+      option.value = tipo.name;
+      option.textContent = tipo.name;
+      selectTipoServico.appendChild(option);
+    });
 
-  M.FormSelect.init(selectTipoServico);
-  M.FormSelect.init(selectStatusPagamento);
+    STATUS.forEach((status) => {
+      const option = document.createElement("option");
+      option.value = status.status;
+      option.textContent = status.status;
+      selectStatusPagamento.appendChild(option);
+    });
+
+    //iniciar o materialize
+    M.FormSelect.init(selectTipoServico);
+    M.FormSelect.init(selectStatusPagamento);
+  }
+
+  await loadSelectOptions(); //xaxho
 
   async function getOrder(idOrder) {
     if (!idOrder) {
@@ -50,20 +57,28 @@ document.addEventListener("DOMContentLoaded", function () {
     selectTipoServico.value = order.service;
     selectStatusPagamento.value = order.status;
 
-
     M.FormSelect.init(selectTipoServico);
     M.FormSelect.init(selectStatusPagamento);
 
-   
     if (inputNameClient.value) inputNameClient.focus();
     if (inputEmailClient.value) inputEmailClient.focus();
     if (inputPhoneClient.value) inputPhoneClient.focus();
   }
 
+  await getOrder(idOrder); //xaxho2
+
   async function updateOrder() {
- 
-    if (!inputNameClient.value || !inputEmailClient.value || !inputPhoneClient.value || !selectTipoServico.value || !selectStatusPagamento.value) {
-      M.toast({ html: 'Por favor, preencha todos os campos corretamente.', classes: 'red darken-2' });
+    if (
+      !inputNameClient.value ||
+      !inputEmailClient.value ||
+      !inputPhoneClient.value ||
+      !selectTipoServico.value ||
+      !selectStatusPagamento.value
+    ) {
+      M.toast({
+        html: "Por favor, preencha todos os campos corretamente.",
+        classes: "red darken-2",
+      });
       return;
     }
 
@@ -80,17 +95,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     await service.updateOrder(dataOrderForUpdate);
 
-    
-    M.toast({ html: 'Ordem de serviço atualizada com sucesso!', classes: 'green darken-2' });
+    M.toast({
+      html: "Ordem de serviço atualizada com sucesso!",
+      classes: "green darken-2",
+    });
 
-  
     setTimeout(() => {
       window.location.href = "../list-order.html";
     }, 1500);
   }
 
-  getOrder(idOrder);
-
-  // Evento para o botão de atualizar
   btnUpdateOrder.addEventListener("click", updateOrder);
 });

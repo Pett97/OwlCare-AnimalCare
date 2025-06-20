@@ -1,127 +1,78 @@
-const URL_ORDER_SERVICO = "https://my-json-server.typicode.com/pett97/OwlCare-AnimalCare/ordemServico";
-
 export class ServiceOrder {
-  async newOrder(data) {
-    try {
-      const response = await fetch(URL_ORDER_SERVICO, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (!response.ok) {
-        alert("erro ao salvar ordem");
-      }
-      alert("Serviço Criado Com Sucesso");
-    } catch (error) {
-      console.error;
+  constructor() {
+    if (!localStorage.getItem("ORDERS")) {
+      localStorage.setItem(
+        "ORDERS",
+        JSON.stringify([
+          {
+            id: "1744690503049",
+            client: {
+              clientName: "barbara",
+              email: "teste@gmail.com",
+              phone: "91241506",
+            },
+            status: "PAGO",
+            service: "BANHO",
+          },
+        ])
+      );
     }
   }
 
-  async getOrder(idOrder) {
-    if (!idOrder) {
-      return;
-    }
-    try {
-      const response = await fetch(`${URL_ORDER_SERVICO}/${idOrder}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error(`Erro ao Buscar Ordem de Servico  com id${idOrder}`);
-      }
-
-      const data = await response.json();
-      if (data) {
-        return data;
-      } else {
-        return false;
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  async getAll() {
-    try {
-      const response = await fetch(URL_ORDER_SERVICO, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-
-      if (!response.ok) {
-        throw new Error("Erro ao buscar Ordens");
-      }
-
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      alert("Erro ao buscar Ordens");
-      console.error(error);
-      return [];
-    }
+  _getAllOrdersFromLocalStorage() {
+    return JSON.parse(localStorage.getItem("ORDERS") || "[]");
   }
 
-  async updateOrder(data) {
-    if (!data) {
-      //alert("Erro ao atualizar ordem: dados ausentes");
-      return;
-    }
-
-    try {
-      const response = await fetch(`${URL_ORDER_SERVICO}/${data.id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data), // já está tudo montado corretamente
-      });
-
-      if (!response.ok) {
-        throw new Error("Erro ao Atualizar Ordem de Serviço");
-      }
-
-      const responseData = await response.json();
-      //alert("Ordem Atualizada com Sucesso!");
-      console.log("Resposta do servidor:", responseData);
-      return responseData;
-    } catch (error) {
-      //alert("Erro ao atualizar ordem");
-      console.error(error);
-      return;
-    }
+  _saveOrder(orders) {
+    localStorage.setItem("ORDERS", JSON.stringify(orders));
   }
 
-  async deleteOrder(idOrderAction) {
-    try {
-      const response = await fetch(`${URL_ORDER_SERVICO}/${idOrderAction}`, {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          id: this.id,
-        }),
-      });
+  getAll() {
+    return this._getAllOrdersFromLocalStorage();
+  }
 
-      if (!response.ok) {
-        throw new Error("Erro ao deletar Order de Serviço");
-      }
+  getOrder(idOrder) {
+    let orders = this._getAllOrdersFromLocalStorage();
+    let orderIndex = orders.findIndex((order) => order.id === idOrder);
+    return orders[orderIndex];
+  }
 
-      const data = await response.json();
-      console.log(data);
-      alert("Ordem Deletado Com Sucesso ");
-      return;
-    } catch (error) {
-      alert("Erro ao Deletar Orderm");
-      console.error(error);
-      return;
-    }
+  storeNewOrder(data) {
+    const orders = this._getAllOrdersFromLocalStorage();
+
+    orders.push({
+      id: data.id,
+      client: data.client,
+      status: data.status,
+      service: data.service,
+    });
+
+    const success = this._saveOrder(orders);
+    return success ? orders : null; // retorna o array atualizado
+  }
+
+  updateOrder(data) {
+    let orders = this._getAllOrdersFromLocalStorage();
+    let index = orders.findIndex((order) => order.id === data.id);
+    if (index === -1) return false;
+
+    orders[index] = {
+      id: data.id,
+      client: data.client,
+      status: data.status,
+      service: data.service,
+    };
+
+    this._saveOrder(orders);
+    return true;
+  }
+
+  deleteOrder(orderId) {
+    let orders = this._getAllOrdersFromLocalStorage();
+    const updated = orders.filter((order) => order.id !== orderId);
+    if (updated.length === orders.length) return false;
+
+    this._saveOrder(updated);
+    return true;
   }
 }
