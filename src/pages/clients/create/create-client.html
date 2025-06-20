@@ -45,8 +45,7 @@
 
                 <div class="input-field col s12 m6 l6">
                     <i class="material-icons prefix">phone</i>
-                    <input type="tel" id="phone_client" class="validate" required pattern="\(\d{2}\)\d{8,9}"
-                        title="Formato esperado: (DD)XXXXXXXX ou (DD)9XXXXXXXX" />
+                    <input type="tel" id="phone_client" class="validate" required pattern="^\(\d{2}\)\s?\d{5}-\d{4}$" title="Exemplo (00) 0000 0000" />
                     <label for="phone_client" data-error="wrong" data-success="right">Celular Cliente</label>
                 </div>
                 <div class="input-field col s12 m6 l6">

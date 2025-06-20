@@ -1,7 +1,11 @@
 export const USER_LOGIN = "pett1997";
 export const USER_PWD = "123456789A";
 
-const DB_TYPES_OF_SERVICE = "http://localhost:3000/types_of_service";
+//site para "hospedar JSON https://my-json-server.typicode.com
+
+const DB_JSON_ONLINE ="https://my-json-server.typicode.com/Pett97/OwlCare-AnimalCare/"; 
+
+const DB_TYPES_OF_SERVICE = DB_JSON_ONLINE+"types_of_service";
 
 export const TYPE_OF_SERVICE = async () => {
   try {
@@ -24,7 +28,7 @@ export const TYPE_OF_SERVICE = async () => {
   }
 };
 
-const DB_STATUS_OF_ORDERS = "http://localhost:3000/status_of_orders";
+const DB_STATUS_OF_ORDERS = DB_JSON_ONLINE+"status_of_orders";
 
 export const STATUS_OF_ODERS = async () => {
   try {

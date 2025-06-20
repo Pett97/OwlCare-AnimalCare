@@ -16,12 +16,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const selectPhoneWhatsapp = document.getElementById("phone-whatsapp");
   const obsClient = document.getElementById("obs_client");
 
+  // Inicializa o select para WhatsApp
   M.FormSelect.init(selectPhoneWhatsapp);
+
+  // Aplica a máscara de celular (00) 00000-0000 para números de 11 dígitos
+  $("#phone_client").mask("(00) 00000-0000", {
+    clearIfNotMatch: false, // Se o número não tiver 11 dígitos, o campo será limpo
+  });
+
+  // Aplica a máscara inicialmente quando a página carregar (garante que o campo já tenha a máscara inicial)
+  $("#phone_client").trigger("input");
 
   formClient.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    //email
+    // Validação do email
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const emailInput = inputEmailClient.value.trim();
     if (!emailRegex.test(emailInput)) {
@@ -32,16 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    //celular
-
-    $(document).ready(function () {
-      $("#phone_client").mask(function (val) {
-        return val.replace(/\D/g, "").length === 11
-          ? "(00)000000000"
-          : "(00)00000000";
-      });
-    });
-
+    // Verifica se o formulário está válido
     if (!formClient.checkValidity()) {
       M.toast({
         html: "Preencha todos os campos corretamente",
@@ -50,8 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    // Coleta os dados do cliente
     let id = Date.now() + "";
-
     const data = {
       id: id,
       clientName: inputNameClient.value.trim(),
@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     try {
+      // Envia os dados para o serviço
       await service.storeClient(data);
       M.toast({
         html: "Cliente cadastrado com sucesso!",
